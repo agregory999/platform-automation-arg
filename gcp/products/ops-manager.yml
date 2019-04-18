@@ -13,7 +13,7 @@ opsman-configuration:
     zone: ((gcp.zone))
     vm_name: platform-automation-ops-manager                            # default: OpsManager-vm
     # For SharedVPC: projects/[HOST_PROJECT_ID]/regions/[REGION]/subnetworks/[SUBNET]
-    vpc_subnet: ((gcp.vpc_subnet))
+    vpc_subnet: pcf-gcp-pcf-network/pcf-gcp-management-subnet/us-east
     tags: ((gcp.tags))
     custom_cpu: 2                      # default:  8
     custom_memory: 8                # default: 16
