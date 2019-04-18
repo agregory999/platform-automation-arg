@@ -12,7 +12,7 @@ gcp:
   project: fe-agregory
   region: us-east1
   zone: us-east1-b
-  vm_name: control-plane-ops-manager               # default: OpsManager-vm
+  vm_name: gcp-ops-manager               # default: OpsManager-vm
   # For SharedVPC: projects/[HOST_PROJECT_ID]/regions/[REGION]/subnetworks/[SUBNET]
   vpc_subnet: control-plane-subnet
   tags: ops-manager                     # make sure firewall allow 443/22 for network tag of "ops-manager"

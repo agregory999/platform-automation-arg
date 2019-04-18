@@ -1,6 +1,3 @@
-foundation: gcp
-
-
 product:
   # Pivnet-based
   product_slug: ops-manager
@@ -10,67 +7,3 @@ product:
   # S3-based, enable and set below variables if using S3
   #regexp: 
 
-pivnet: 
-  token: ((pivnet_token))
-
-credhub:
-  server: https://concourse.gcp-control-plane.arg-pivotal.com:8844
-  ca_cert: |
-    -----BEGIN CERTIFICATE-----
-    MIIDUTCCAjmgAwIBAgIVALSluR/KOssgSl3vqXkzQT4GeJ25MA0GCSqGSIb3DQEB
-    CwUAMB8xCzAJBgNVBAYTAlVTMRAwDgYDVQQKDAdQaXZvdGFsMB4XDTE5MDQxNTE2
-    NDY0MloXDTIzMDQxNjE2NDY0MlowHzELMAkGA1UEBhMCVVMxEDAOBgNVBAoMB1Bp
-    dm90YWwwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDMcmlF78mXHP7F
-    TrzMgOUurx5Nmne93X/Ty3DDetYmpYcgTXH+z/bWlxxZ3XRAp+gFqVuzgV29Tijx
-    SfVeb2q1y3er8zR3X/zPBfy8Ifjl9ph/oIUANvfv3O7nBznVKtlvZCitkNgSxTrW
-    wDIfgzvBSbvLxJEuQKYVaB8EjHoJj5uDswpzYGqpQYz5NseYXeuks4XUjQlqHcXT
-    9VvQqgb+axtkJw/FODtXqTsB73QClDCcSbrbJkMeiU5goKTrdbhdhWB1BQjuAEBP
-    FTLe5I9IeRsCVDLYF2tMsu8UTKymLtaxXTTdnN63S0n2Wr3rbkkSIc4mICqvE/Wb
-    wJd0vy8hAgMBAAGjgYMwgYAwHQYDVR0OBBYEFBUtuJnk58J9VXXEGMFWJbAfO/B4
-    MB8GA1UdIwQYMBaAFBUtuJnk58J9VXXEGMFWJbAfO/B4MB0GA1UdJQQWMBQGCCsG
-    AQUFBwMCBggrBgEFBQcDATAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIB
-    BjANBgkqhkiG9w0BAQsFAAOCAQEAOYpJxJq5vonmaU3ylhp5ysmCXZSj68ySYiqB
-    MoZP+NBxmsLS51U4cHENiRhWBrn4kgJwy766CxRJ+sRhu/z6U0t2asdModVuFIhc
-    4xNig+pLjFsbwVjMRN/nLSpZv7dipd/+8d7TMKPcB9VfxfsC1JIzol2jfvy9Tt2k
-    BFhyQGJzMoIG9PUcO8wSNIMRugKfX20XaZ8zrNO76/lbtdlkZ8Y6OP/P0irMSDkR
-    hJQcaQLXaCFOO/oiYyPflcfJPVhTQv4w5t+wxluLhKWHIRqexS2o/HoMxkkxevRi
-    QoLGkx/cVIxyML98NnlKkHm+9311+44oOvQMuqc2aAsBVEK66w==
-    -----END CERTIFICATE-----
-  client: ops_manager
-  secret: UdLhKn68dBVOtr_qn9oVZVf4VAQqBzyO
-  interpolate_folders: "dev/config dev/env dev/vars"
-
-git:
-  configuration:
-    uri: https://github.com/agregory999/platform-automation-arg 
-  user: 
-    email: agregoru@pivotal.io
-    username: agregory999
-  private_key: 
-    -----BEGIN RSA PRIVATE KEY-----
-    MIIEowIBAAKCAQEAwztZ5e+1MYZn6j0c5CIX4OWddN1Hp1HdRGjhkB+fYhVbjFmr
-    SO65LCTy3t6lFQovrUtcOUAacW3HQD9WywmF/fjzkEHalS25Ir276sgeYkei+Z7o
-    kZ9USx+mJ53FUbCQ0bFsEBbUu8XjsVyFPmOsv6F75Y16HBrz6knSnvuWdNVyJWQR
-    xN9maFs6BqvhcYAuXl+vEv54SrNDDcDEniQCjeiav5nwz9pb3AJNipQcdqk7Q8en
-    +1ud0v7uvBzaWQyHyit7bXV+yorYzmJtWgA/ZeQMIDVJwrw/9PVF4yGcQ63xPcQr
-    0IOiNlbbmgEVsibpJzDROfYH1x8W4CtHkA/YtQIDAQABAoIBABEK6FEbOM0G96FK
-    DnCXzU/Tm4gtHOktS0yCf1ZOfGJajPBWj45BUKba3ty3wN9yUTEmh/lzcBuAwskH
-    /nKg9TJzfgeUyBkHscanm3TmXUilCkQSLCkyKHCaZa3Fpwj3idzUSSOqao2tu6+q
-    7PLCTr03wpIKZKN5ctt78EfynHK8XDEQ+8DhRvv5r8c8Vt+KUkrF/oV23FiJfJ46
-    YIG2deKSmS04Nd0cBPPvrfzqhPauYPTMk6JmGD90v8IptO81JE33GrQvcM2w1/gK
-    7LqIiBMrEKmtSVa14C25V+LvvSKgcJ7XhHhQoBhlFzy6Xli1g0b2fWhZx2TsxQvH
-    o6Yk5A0CgYEA698FBamWO6PiwxnULBJHJVbqkUDi86hd1LgMPmuWriKAqDtvvT5T
-    mrZehea31Zzt+pr+k649a05zPMNvURN5iljMBE3NGnd7FVuWkWD5AMQE+hGpRV18
-    Q7BMhN+HwGuuPRcFf9ZBx/vvvX0WhnilWGyyn42hpHYsumvTMtSzJusCgYEA0+SA
-    NpP33fg2m3y+vAtyaLHjOgksqjRDNjv5wqWwS6XHoOe15i+UWts9wlVOV+PrJgbS
-    GVBlimCGLoHlvBBdt7i6DIW4XgJaX2X1ZSXag8fPmHHjc/NymYdPO1dLoxZwxPa5
-    gwqKgQA5C1O/3foEDKhV/oizzRXabC5UFEtKVt8CgYEAgB9pq/S9jXHtSEssbDAV
-    g1veGL6lSPNo3JaI2BM7CyXkuv1mKebEJSLw300/CIKw5lLw/ClGZZZ8lEIYonKw
-    r4yibagRRFIogqZ4eEmzmE3h4jBbwTkRufb26ao+JDCZucdajmFE5Cuew1BCPxMj
-    xY9ty6t0ZVBn5W+SjmbpVbcCgYB0xpt6eLXD2QWPT4J2dACLfm3yEBhTfRYFj6wn
-    /9RW/Hg2TzzKLTKfl/BDZ2wTuAJiJKQpW0t6pZONkf0gVgywMdgnCpL/DGDt7mz9
-    X407zySzqSBnSKXBwvaBh6yhpr5jbm3ysB6A1bSab39wQFd2+lbaPlCJGCAWOroP
-    rSa9FQKBgEXNQWmueQtE1PUxdVXVIBWJ+mWQLs3/r31nTut8abMa94u5r2BO8Nq+
-    N6r6x8GX1eQzqEe5NgN4AzYZwv7lAq7KIJBeM9cdE+hrB+p/hnRaRdPa4MJMFdqs
-    Vu1VUJWPgwzmmGL9sI0kgIVk+CGMzpwlwuDMKGrqGwX9RRbpRyUT
-    -----END RSA PRIVATE KEY-----
