@@ -8,13 +8,13 @@
 opsman-configuration:
   gcp:
     gcp_service_account: ((gcp.gcp_service_account))
-    project: ((gcp.project))
-    region: ((gcp.region))
-    zone: ((gcp.zone))
+    project: fe-agregory
+    region: us-east1
+    zone: us-east1-b
     vm_name: platform-automation-ops-manager                            # default: OpsManager-vm
     # For SharedVPC: projects/[HOST_PROJECT_ID]/regions/[REGION]/subnetworks/[SUBNET]
     vpc_subnet: pcf-gcp-pcf-network/pcf-gcp-management-subnet/us-east
-    tags: ((gcp.tags))
+    tags: opsman
     custom_cpu: 2                      # default:  8
     custom_memory: 8                # default: 16
     boot_disk_size: 200              # default: 400
