@@ -1,24 +1,31 @@
 ---
-
-# vars file for product: OpsMan
-
-# Notes:
-# 1. This is the sample product config vars file for Ops Manager on top of Google Cloud Platform (GCP)
-# 2. This should work together with "/products/ops-manager.yml" to parameterize the product config
-# 3. The values of the YAML elements can be: a) simple static values, or 2) values stored in CredHub
-
-gcp:
-  gcp_service_account: ((GCP_CREDENTIALS))
-  project: fe-agregory
-  region: us-east1
-  zone: us-east1-b
-  vm_name: ops-manager-vm               # default: OpsManager-vm
-  # For SharedVPC: projects/[HOST_PROJECT_ID]/regions/[REGION]/subnetworks/[SUBNET]
-  vpc_subnet: pcf-gcp-management-subnet
-  tags: ops-manager                     # make sure firewall allow 443/22 for network tag of "ops-manager"
-  custom_cpu: 4                         # default:  8
-  custom_memory: 16                     # default: 16
-  boot_disk_size: 100                   # default: 400
-  # At least one IP address (public or private) needs to be assigned to the VM.
-  public_ip: ((opsman_public_ip))
-  private_ip: 10.0.2.3
+opsman-configuration:
+  gcp:
+    gcp_service_account: |
+      {
+  "type": "service_account",
+  "project_id": "fe-agregory",
+  "private_key_id": "d9909b9eb7abb3e69582561a65042e90031dd26a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCbUI6grxUgT4ap\nkSJi88HJ5NOl3aIbH3Y3bUL8JdHv9GsuhmmcCuNsvbmyml44GuySG8X0Kg4LYtnw\nQsKdhNULkV3OW8mRPW/mXtjeROmq1wPWe5MWTcl/pUjsSvFshpcxAK9MDFzralN1\nYx6XfTX8i1qHk34Xm9u2uPV74ROGZgJ0na5S+uRZ+REo+hBwAPd71yv0u3L2wAmm\nyD25+vd/pICohnUnL1+nedyFIObzDzKDrcxli+VjuvUjM5eumO217PQlQN4jhQfe\n4GhjLOXepXqpp3PZSoCzrRr4p1QhvwHyV80JhTrHCHfzlQrP4WOJfjnuD7RHwP8+\n+troP4F9AgMBAAECggEAAu3sIUxGRDAEh49+ZkSpb1DE7vyVEvYR843bjx+RTu3D\nVTdnPxNiOdK8zrfYpRbNpATuoPl+0FFvzT0cYmdIhQmbrfgVCuizSMmw/3PcYdoP\nb0nrBmFOH1qqoSsIVFCA04WCa9FpscsA9rOQtpnW+jJWTlQjkD2FrosLb7lZJKet\nQiJi9YAC7ENbyP7wCgTf6J4p5MjanZhgkBJPFYcRoQwTntbLCBXC2xmGqM9Faxg5\ni8ZxRIvYv9QybyZzfV9Vc9nRIJtdvv9nf67ATi1VGJhZnMC5msAvX2E5Uh/IWaMi\nQ2yTBHWXWAm0kq8/Zf1x2feKmQgoNRBzaa6Qg6kUYQKBgQDYZIsjOfS1u4oVSxCg\nMXIBDDJaQJxS1ksDO/FnGedxby/8hiWBuJtXZ4TMqF5KRWGBIjVvYF5J4i86M85X\n52WxOfw5CyNyw8SgslFWB42OJ7t3CEle5n8xGnmDQmokAG/mw5bE7hgJYrk77cVB\n+f2iViqdwL40zWaEh3wT7Ud21QKBgQC3vhhN2x/2uBgHEjwkJt9L5+s94R2S9Try\nVFQ8dd7eLDFZ8KnNnRGufUtJQUIHOU2dRdVhzgbpbPpwYYPX55n6P23J8dDK//Gq\nmMj89zbPrkFQFkr5GQ7W0JnQStMSM4cyExLD7NVx5aBsuXcDfbIVGwOWoswhLkQp\n9Mi16d0ECQKBgFwgwlQnEpZk1+8k3Fk3c/AaPz3JkER8U8d2t9pLXwweaHG8sy89\nZ3WY7yMq86nvTAnshI98mege0jiXYdxu+g6wP0ASC++KhaZdBN/5qzzAkcGl14b9\n310Khn1pw0K8pOe8ke4Z6EXmsDJhkr/6LQ/2W4J6UwCsCl+WRy88sFZZAoGBALZL\nBtnXWHLyWgRJ9xj25/rq8NzHhwvR+NWLDLefSamqtpvAxPaVqoEvFY5sDBIWrAYo\nznbmbL0RvbXZSXDe+kjovQfpvXhpTV4vjthKfDq3a10FgQR589rzwmaAlcAtFyh6\n+9ceFPWXF/5GUulHv3JpBrpgcZ1JxZ7KmIbCqt/hAoGAJMXVjIi5VCRClhG3OQtd\n17fWBDRdm4qXvQw5FAsoPn7oRyvNaLOifFUj78nRIxqbM8yaAW3XRiXw2Genyg43\nCqQTOZj6vdeORjh6jc4s4qcZ17QopocIHHuYIIgEC2Gf+HSeiQVuWHK81yzBqruj\n60sq64vsRtxH0gj05nhdMmU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "control-plane-arg@fe-agregory.iam.gserviceaccount.com",
+  "client_id": "106122143019233144263",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/control-plane-arg%40fe-agregory.iam.gserviceaccount.com"
+      }
+    project: project-id
+    region: us-central1
+    zone: us-central1-b
+    vm_name: ops-manager-vm               # default: OpsManager-vm
+    # For SharedVPC: projects/[HOST_PROJECT_ID]/regions/[REGION]/subnetworks/[SUBNET]
+    vpc_subnet: pcf-gcp-management-subnet
+    tags: ops-manager
+    # This CPU, Memory and disk size demonstrated here
+    # match the defaults, and needn't be included if these are the desired values
+    custom_cpu: 2
+    custom_memory: 8
+    boot_disk_size: 100
+    # At least one IP address (public or private) needs to be assigned to the VM.
+    public_ip: 35.231.170.231
+    private_ip: 10.0.2.3 
