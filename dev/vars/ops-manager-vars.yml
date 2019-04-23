@@ -15,9 +15,9 @@ gcp:
   vm_name: ops-manager-vm               # default: OpsManager-vm
   # For SharedVPC: projects/[HOST_PROJECT_ID]/regions/[REGION]/subnetworks/[SUBNET]
   vpc_subnet: pcf-gcp-management-subnet
-  tags: ops-manager                     # make sure firewall allow 443/22 for network tag of "ops-manager"
-  custom_cpu: 4                         # default:  8
-  custom_memory: 16                     # default: 16
+  tags: control-plane-ops-manager-external                     # make sure firewall allow 443/22 for network tag of "ops-manager"
+  custom_cpu: 2                         # default:  8
+  custom_memory: 8                     # default: 16
   boot_disk_size: 100                   # default: 400
   # At least one IP address (public or private) needs to be assigned to the VM.
   public_ip: ((opsman_public_ip))
