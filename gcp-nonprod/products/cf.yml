@@ -1,5 +1,9 @@
 product-name: cf
 product-properties:
+  .application_security_groups.security_acknowledgement:
+    value: X
+  .cloud_controller.stack_migration_acknowledgement:
+    value: X
   .cloud_controller.allow_app_ssh_access:
     value: true
   .cloud_controller.apps_domain:
