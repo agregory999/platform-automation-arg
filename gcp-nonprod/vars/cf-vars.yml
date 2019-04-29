@@ -57,7 +57,7 @@ cf:
       instances: 0
     router:
       instances: automatic
-      elb_names: ["http:gcp-nonprod-cf-http","tcp:gcp-nonprod-cf-ws"]
+      elb_names: ["http:gcp-nonprod-httpslb","tcp:gcp-nonprod-cf-ws"]
     tcp_router:
       instances: 0
 
