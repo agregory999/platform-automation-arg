@@ -21,7 +21,6 @@ cf:
       credhub_key_encryption_passwords: ((cf/product-properties/credhub_key_encryption_passwords))
       gorouter_ssl_ciphers: ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384
       networking_poe_ssl_certs: ((cf/product-properties/networking_poe_ssl_certs))
-      routing_minimum_tls_version: tls_v1_2
       system_blobstore:
         type: external_gcs
         external_gcs:
