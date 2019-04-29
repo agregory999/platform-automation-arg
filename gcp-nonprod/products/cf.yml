@@ -104,9 +104,9 @@ product-properties:
     value: 4789
   .properties.credhub_database:
     value: internal_mysql
-  .properties.credhub_hsm_provider_client_certificate: 
+  .properties.credhub_hsm_provider_client_certificate:
     value: {}
-  .properties.credhub_hsm_provider_partition_password: 
+  .properties.credhub_hsm_provider_partition_password:
     value: {}
   .properties.credhub_key_encryption_passwords:
     value:
@@ -164,10 +164,7 @@ product-properties:
   .properties.networkpolicyserverinternal_database_max_open_connections:
     value: 200
   .properties.nfs_volume_driver:
-    value: enable
-  .properties.nfs_volume_driver.enable.ldap_service_account_password:
-    value:
-      secret: ((properties_nfs_volume_driver_enable_ldap_service_account_password.secret))
+    value: disable
   .properties.push_apps_manager_app_poll_interval:
     value: 10
   .properties.push_apps_manager_currency_lookup:
@@ -372,6 +369,7 @@ resource-config:
     instance_type:
       id: automatic
     internet_connected: true
+    elb_names: ((cf.resource-config.router.elb_names))
   tcp_router:
     instances: 1
     persistent_disk:
@@ -400,5 +398,3 @@ errand-config:
     post-deploy-state: true
   test-autoscaling:
     post-deploy-state: true
-
-
