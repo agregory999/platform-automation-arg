@@ -34,7 +34,7 @@ director:
     - name: gcp-nonprod-infrastructure-subnet
       subnets:
       - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-infrastructure-subnet/us-east1
-        cidr: 10.0.0.0/24
+        cidr: 10.0.0.0/26
         dns: 169.254.169.254, 8.8.8.8
         gateway: 10.0.0.1
         reserved_ip_ranges: 10.0.0.1-10.0.0.9
