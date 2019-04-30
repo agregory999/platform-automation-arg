@@ -32,7 +32,7 @@ product-properties:
   .diego_brain.starting_container_count_maximum:
     value: 200
   .ha_proxy.skip_cert_verify:
-    value: false
+    value: true
   .mysql.cli_history:
     value: true
   .mysql.max_connections:
@@ -383,7 +383,7 @@ resource-config:
       id: automatic
     internet_connected: true
     elb_names:
-    - http:gcp-nonprod-cf-http
+    - http:gcp-nonprod-httpslb
     - tcp:gcp-nonprod-cf-ws
   tcp_router:
     instances: 1
