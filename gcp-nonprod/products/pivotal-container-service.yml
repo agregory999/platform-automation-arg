@@ -2,8 +2,8 @@ product-name: pivotal-container-service
 product-properties:
   .pivotal-container-service.pks_tls:
     value:
-      cert_pem: ((pivotal-container-service_pks_tls.cert_pem))
-      private_key_pem: ((pivotal-container-service_pks_tls.private_key_pem))
+      cert_pem: "((pks.product-properties.pks_tls.certificate))"
+      private_key_pem: "((pks.product-properties.pks_tls.private_key))"
   .properties.cloud_provider:
     value: "((pks.product-properties.properties.cloud_provider.type))"
   .properties.cloud_provider.gcp.project_id:
