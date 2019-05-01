@@ -25,7 +25,7 @@ director:
 
   # network-assignment
   network-assignment:
-    network: {name: gcp-nonprod-pks-infrastructure-subnet}
+    network: {name: infrastructure}
     singleton_availability_zone: {name: us-east1-b}
 
   # networks-configuration
