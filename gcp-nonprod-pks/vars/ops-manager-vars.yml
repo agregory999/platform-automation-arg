@@ -12,10 +12,10 @@ gcp:
   project: fe-agregory
   region: us-east1
   zone: us-east1-b
-  vm_name: gcp-nonprod-ops-manager               # default: OpsManager-vm
+  vm_name: gcp-nonprod-pks-ops-manager               # default: OpsManager-vm
   # For SharedVPC: projects/[HOST_PROJECT_ID]/regions/[REGION]/subnetworks/[SUBNET]
-  vpc_subnet: gcp-nonprod-infrastructure-subnet
-  tags: gcp-nonprod-ops-manager-external                     # make sure firewall allow 443/22 for network tag of "ops-manager"
+  vpc_subnet: gcp-nonprod-pks-infrastructure-subnet
+  tags: gcp-nonprod-pks-ops-manager-external                # make sure firewall allow 443/22 for network tag of "ops-manager"
   custom_cpu: 2                         # default:  8
   custom_memory: 8                     # default: 16
   boot_disk_size: 100                   # default: 400
