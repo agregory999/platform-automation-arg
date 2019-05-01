@@ -25,15 +25,15 @@ director:
 
   # network-assignment
   network-assignment:
-    network: {name: gcp-nonprod-infrastructure-subnet}
+    network: {name: gcp-nonprod-pks-infrastructure-subnet}
     singleton_availability_zone: {name: us-east1-b}
 
   # networks-configuration
   networks-configuration:
     networks:
-    - name: gcp-nonprod-infrastructure-subnet
+    - name: infrastructure
       subnets:
-      - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-infrastructure-subnet/us-east1
+      - iaas_identifier: gcp-nonprod-pks-pcf-network/gcp-nonprod-pks-infrastructure-subnet/us-east1
         cidr: 10.0.0.0/26
         dns: 169.254.169.254, 8.8.8.8
         gateway: 10.0.0.1
@@ -42,24 +42,24 @@ director:
         - us-east1-b
         - us-east1-c
         - us-east1-d
-    - name: pcf-gcp-pas-subnet
+    - name: pks
       subnets:
-      - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-pas-subnet/us-east1
-        cidr: 10.0.4.0/24
+      - iaas_identifier: gcp-nonprod-pks-pcf-network/gcp-nonprod-pks-subnet/us-east1
+        cidr: 10.0.10.0/24
         dns: 169.254.169.254, 8.8.8.8
-        gateway: 10.0.4.1
-        reserved_ip_ranges: 10.0.4.1-10.0.4.9
+        gateway: 10.0.10.1
+        reserved_ip_ranges: 10.0.10.1-10.0.10.9
         availability_zone_names:
         - us-east1-b
         - us-east1-c
         - us-east1-d
-    - name: services
+    - name: pks-services
       subnets:
-      - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-services-subnet/us-east1
-        cidr: 10.0.8.0/24
+      - iaas_identifier: gcp-nonprod-pks-pcf-network/gcp-nonprod-pks-pks-services-subnet/us-east1
+        cidr: 10.0.11.0/24
         dns: 169.254.169.254, 8.8.8.8
-        gateway: 10.0.8.1
-        reserved_ip_ranges: 10.0.8.1-10.0.8.9
+        gateway: 10.0.11.1
+        reserved_ip_ranges: 10.0.11.1-10.0.11.9
         availability_zone_names:
         - us-east1-b
         - us-east1-c
