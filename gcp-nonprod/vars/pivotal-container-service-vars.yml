@@ -49,7 +49,7 @@ pks:
   resource-config:
     pivotal-container-service:
       elb_names:
-      - tcp:gcp-nonprod-pks-api
+      - tcp:gcp-nonprod-shared-pks-api
 
   # errand-config
   errand-config:
