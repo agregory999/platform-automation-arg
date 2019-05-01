@@ -35,13 +35,13 @@ pks:
   
   # network-properties
   network-properties:
-    network: gcp-nonprod-pks-infrastructure-subnet
+    network: infrastructure
     other_availability_zones:
     - name: us-east1-b
     - name: us-east1-c
     - name: us-east1-d
     service_network:
-      name: gcp-nonprod-pks-pks-services-subnet
+      name: pks-services
     singleton_availability_zone:
       name: us-east1-b
 
