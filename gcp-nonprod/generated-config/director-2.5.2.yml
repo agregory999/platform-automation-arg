@@ -1,9 +1,63 @@
-az-configuration: []
+az-configuration:
+- name: us-east1-b
+  iaas_configuration_guid: 254df69d93272ab371a5
+- name: us-east1-c
+  iaas_configuration_guid: 254df69d93272ab371a5
+- name: us-east1-d
+  iaas_configuration_guid: 254df69d93272ab371a5
 network-assignment:
+  network:
+    name: gcp-nonprod-infrastructure-subnet
   other_availability_zones: []
+  singleton_availability_zone:
+    name: us-east1-b
 networks-configuration:
   icmp_checks_enabled: false
-  networks: []
+  networks:
+  - name: gcp-nonprod-infrastructure-subnet
+    subnets:
+    - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-infrastructure-subnet/us-east1
+      cidr: 10.0.0.0/26
+      dns: 169.254.169.254, 8.8.8.8
+      gateway: 10.0.0.1
+      reserved_ip_ranges: 10.0.0.1-10.0.0.9
+      availability_zone_names:
+      - us-east1-b
+      - us-east1-c
+      - us-east1-d
+  - name: gcp-nonprod-pas-subnet
+    subnets:
+    - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-pas-subnet/us-east1
+      cidr: 10.0.4.0/24
+      dns: 169.254.169.254, 8.8.8.8
+      gateway: 10.0.4.1
+      reserved_ip_ranges: 10.0.4.1-10.0.4.9
+      availability_zone_names:
+      - us-east1-b
+      - us-east1-c
+      - us-east1-d
+  - name: services
+    subnets:
+    - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-services-subnet/us-east1
+      cidr: 10.0.8.0/24
+      dns: 169.254.169.254, 8.8.8.8
+      gateway: 10.0.8.1
+      reserved_ip_ranges: 10.0.8.1-10.0.8.9
+      availability_zone_names:
+      - us-east1-b
+      - us-east1-c
+      - us-east1-d
+  - name: gcp-nonprod-pks-services-subnet
+    subnets:
+    - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-pks-services-subnet/us-east1
+      cidr: 10.0.12.0/24
+      dns: 169.254.169.254, 8.8.8.8
+      gateway: 10.0.12.1
+      reserved_ip_ranges: 10.0.12.1-10.0.12.9
+      availability_zone_names:
+      - us-east1-b
+      - us-east1-c
+      - us-east1-d
 properties-configuration:
   director_configuration:
     blobstore_type: local
@@ -23,9 +77,9 @@ properties-configuration:
     keep_unreachable_vms: false
     local_blobstore_options:
       tls_enabled: true
-    ntp_servers_string: ""
-    post_deploy_enabled: false
-    resurrector_enabled: false
+    ntp_servers_string: metadata.google.internal
+    post_deploy_enabled: true
+    resurrector_enabled: true
     retry_bosh_deploys: false
     skip_director_drain: false
   dns_configuration:
