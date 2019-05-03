@@ -6,14 +6,14 @@ az-configuration:
   iaas_configuration_guid: 761e1ddf4634967a2cc1 
 network-assignment:
   network:
-    name: VM Network
+    name: infrastructure
   other_availability_zones: []
   singleton_availability_zone:
     name: AZ1
 networks-configuration:
   icmp_checks_enabled: false
   networks:
-  - name: VM Network
+  - name: infrastructure
     subnets:
     - iaas_identifier: VM Network
       cidr: 192.168.1.0/24
