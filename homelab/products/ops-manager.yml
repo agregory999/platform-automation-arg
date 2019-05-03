@@ -1,23 +1,31 @@
 ---
 
 # Product: OpsMan
-
-# Notes:
-# 1. This is the sample product config file for Ops Manager on top of Google Cloud Platform (GCP)
+# The config for an Ops Manager described IAAS specific information for creating the VM
 
 opsman-configuration:
-  gcp:
-    gcp_service_account: ((gcp.gcp_service_account))
-    project: ((gcp.project))
-    region: ((gcp.region))
-    zone: ((gcp.zone))
-    vm_name: ((gcp.vm_name))                            # default: OpsManager-vm
-    # For SharedVPC: projects/[HOST_PROJECT_ID]/regions/[REGION]/subnetworks/[SUBNET]
-    vpc_subnet: ((gcp.vpc_subnet))
-    tags: ((gcp.tags))
-    custom_cpu: ((gcp.custom_cpu))                      # default:  8
-    custom_memory: ((gcp.custom_memory))                # default: 16
-    boot_disk_size: ((gcp.boot_disk_size))              # default: 400
-    # At least one IP address (public or private) needs to be assigned to the VM.
-    public_ip: ((gcp.public_ip))
-    private_ip: ((gcp.private_ip))
+  vsphere:
+    vcenter:
+      url: ((vsphere.vcenter.url))
+      username: ((vsphere.vcenter.username))
+      password: ((vsphere.vcenter.password))
+      datastore: ((vsphere.vcenter.datastore))
+      ca_cert: ((vsphere.vcenter.ca_cert))
+      host: ((vsphere.vcenter.host))                    # vCenter host to deploy Ops Manager in
+      datacenter: ((vsphere.vcenter.datacenter))
+      resource_pool: ((vsphere.vcenter.resource_pool))  # or /<Data Center Name>/host/<Cluster Name>
+      folder: ((vsphere.vcenter.folder))
+      insecure: ((vsphere.vcenter.insecure))            # default: 0 (secure); 1 (insecure)
+    disk_type: ((vsphere.disk_type))                    # example: thin|thick
+    private_ip: ((vsphere.private_ip))
+    dns: ((vsphere.dns))
+    ntp: ((vsphere.ntp))                                # example: ntp.ubuntu.com
+    ssh_password: ((vsphere.ssh_password))
+    ssh_public_key: ((vsphere.ssh_public_key))          # for OpsManager >= 2.3
+    hostname: ((vsphere.hostname))
+    network: ((vsphere.network))                        # vcenter network to deploy to
+    netmask: ((vsphere.netmask))
+    gateway: ((vsphere.gateway))
+    vm_name: ((vsphere.vm_name))                        # default: Ops_Manager
+    memory: ((vsphere.memory))                          # default: 8 GB
+    cpu: ((vsphere.cpu))                                # default: 1
