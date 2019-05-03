@@ -1,0 +1,28 @@
+---
+
+# Homelab Director Variables
+# Configure based on actual homelab settings for physical cluster
+
+director:
+  properties-configuration:
+    iaas_configuration:
+      bosh_disk_path: pks_disks
+      bosh_template_folder: pks_templates
+      bosh_vm_folder: pks_vms
+      datacenter: Datacenter
+      disk_type: thin
+      ephemeral_datastores_string: DS-FAST
+      persistent_datastores_string: DS-FAST
+      guid: 761e1ddf4634967a2cc1
+      name: Homelab
+      nsx_address: 
+      nsx_ca_certificate: 
+      nsx_mode: nsx-t
+      nsx_networking_enabled: false
+      nsx_username: 
+      nsx_password: 
+      ssl_verification_enabled: false
+      vcenter_host: vcsa.homelab.arg-pivotal.com
+      vcenter_username: ((vcenter_user.username))
+      vcenter_password: ((vcenter_user.password))
+

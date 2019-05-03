@@ -1,0 +1,91 @@
+az-configuration:
+- name: AZ1
+  clusters:
+  - cluster: Physical-Cluster
+    resource_pool: PLAT-AUTO
+  iaas_configuration_guid: 3a405e10f4968924c416
+network-assignment:
+  network:
+    name: control-plane
+  other_availability_zones: []
+  singleton_availability_zone:
+    name: AZ1
+networks-configuration:
+  icmp_checks_enabled: false
+  networks:
+  - name: control-plane
+    subnets:
+    - iaas_identifier: VM Network
+      cidr: 192.168.1.0/24
+      dns: 8.8.8.8
+      gateway: 192.168.1.1
+      reserved_ip_ranges: 192.168.1.1-192.168.1.20
+      availability_zone_names:
+      - AZ1
+properties-configuration:
+  director_configuration:
+    allow_legacy_agents: true
+    blobstore_type: local
+    bosh_recreate_on_next_deploy: false
+    bosh_recreate_persistent_disks_on_next_deploy: false
+    database_type: internal
+    director_worker_count: 5
+    encryption:
+      keys: []
+      providers: []
+    excluded_recursors: []
+    hm_emailer_options:
+      enabled: false
+    hm_pager_duty_options:
+      enabled: false
+    identification_tags: {}
+    keep_unreachable_vms: false
+    local_blobstore_options:
+      tls_enabled: true
+    ntp_servers_string: 0.pool.ntp.org
+    post_deploy_enabled: false
+    resurrector_enabled: true
+    retry_bosh_deploys: false
+    skip_director_drain: true
+  dns_configuration:
+    handlers: []
+  iaas_configuration:
+    additional_cloud_properties: {}
+    bosh_disk_path: ((director.properties-configuration.iaas_configuration.bosh_disk_path))
+    bosh_template_folder: ((director.properties-configuration.iaas_configuration.bosh_template_folder))
+    bosh_vm_folder: ((director.properties-configuration.iaas_configuration.bosh_vm_folder))
+    datacenter: ((director.properties-configuration.iaas_configuration.datacenter))
+    disk_type: ((director.properties-configuration.iaas_configuration.disk_type))
+    ephemeral_datastores_string: ((director.properties-configuration.iaas_configuration.ephemeral_datastores_string))
+    persistent_datastores_string: ((director.properties-configuration.iaas_configuration.persistent_datastores_string))
+    guid: ((director.properties-configuration.iaas_configuration.guid))
+    name: ((director.properties-configuration.iaas_configuration.name))
+    nsx_address: ((director.properties-configuration.iaas_configuration.nsx_address))
+    nsx_ca_certificate: ((director.properties-configuration.iaas_configuration.nsx_ca_certificate))
+    nsx_mode: ((director.properties-configuration.iaas_configuration.nsx_mode))
+    nsx_networking_enabled: ((director.properties-configuration.iaas_configuration.nsx_networking_enabled))
+    nsx_username: ((director.properties-configuration.iaas_configuration.nsx_username))
+    nsx_password: ((director.properties-configuration.iaas_configuration.nsx_password))
+    ssl_verification_enabled: ((director.properties-configuration.iaas_configuration.ssl_verification_enabled))
+    vcenter_host: ((director.properties-configuration.iaas_configuration.vcenter_host))
+    vcenter_username: ((director.properties-configuration.iaas_configuration.vcenter_username))
+    vcenter_password: ((director.properties-configuration.iaas_configuration.vcenter_password))
+  security_configuration:
+    generate_vm_passwords: true
+  syslog_configuration:
+    enabled: false
+resource-configuration:
+  compilation:
+    instances: automatic
+    instance_type:
+      id: automatic
+  director:
+    instances: automatic
+    persistent_disk:
+      size_mb: automatic
+    instance_type:
+      id: automatic
+vmextensions-configuration:
+- name: concourse-lb
+  cloud_properties: {}
+
