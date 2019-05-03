@@ -9,7 +9,7 @@ vsphere:
     host: esxi.homelab.arg-pivotal.com  # vCenter host to deploy Ops Manager in
     datacenter: Datacenter
     resource_pool: /Datacenter/host/Physical-Cluster   # or /<Data Center Name>/host/<Cluster Name>
-    folder: /Datacenter/pcf_vms                # /<Data Center Name>/vms/<Folder>
+    folder: /Datacenter/vms/pcf_vms                # /<Data Center Name>/vms/<Folder>
     insecure: 1                               # default: 0 (secure); 1 (insecure)
   disk_type: thin                            # example: thin|thick
   private_ip: 192.168.1.18
