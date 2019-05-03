@@ -1,30 +1,11 @@
-az-configuration:
-- name: AZ1
-  clusters:
-  - cluster: Physical-Cluster
-    resource_pool: PLAT-AUTO
-  iaas_configuration_guid: 3a405e10f4968924c416
+az-configuration: []
 network-assignment:
-  network:
-    name: control-plane
   other_availability_zones: []
-  singleton_availability_zone:
-    name: AZ1
 networks-configuration:
-  icmp_checks_enabled: false
-  networks:
-  - name: control-plane
-    subnets:
-    - iaas_identifier: VM Network
-      cidr: 192.168.1.0/24
-      dns: 8.8.8.8
-      gateway: 192.168.1.1
-      reserved_ip_ranges: 192.168.1.1-192.168.1.20
-      availability_zone_names:
-      - AZ1
+  icmp_checks_enabled: true
+  networks: []
 properties-configuration:
   director_configuration:
-    allow_legacy_agents: true
     blobstore_type: local
     bosh_recreate_on_next_deploy: false
     bosh_recreate_persistent_disks_on_next_deploy: false
@@ -33,23 +14,25 @@ properties-configuration:
     encryption:
       keys: []
       providers: []
-    excluded_recursors: []
     hm_emailer_options:
       enabled: false
     hm_pager_duty_options:
       enabled: false
     identification_tags: {}
+    job_configuration_on_tmpfs: false
     keep_unreachable_vms: false
     local_blobstore_options:
       tls_enabled: true
-    ntp_servers_string: 0.pool.ntp.org
+    ntp_servers_string: ""
     post_deploy_enabled: false
-    resurrector_enabled: true
+    resurrector_enabled: false
     retry_bosh_deploys: false
-    skip_director_drain: true
+    skip_director_drain: false
   dns_configuration:
+    excluded_recursors: []
     handlers: []
   iaas_configuration:
+    additional_cloud_properties: {}
     bosh_disk_path: ((properties-configuration_iaas_configuration_bosh_disk_path))
     bosh_template_folder: ((properties-configuration_iaas_configuration_bosh_template_folder))
     bosh_vm_folder: ((properties-configuration_iaas_configuration_bosh_vm_folder))
@@ -65,6 +48,7 @@ properties-configuration:
     vcenter_username: ((properties-configuration_iaas_configuration_vcenter_username))
   security_configuration:
     generate_vm_passwords: true
+    opsmanager_root_ca_trusted_certs: false
   syslog_configuration:
     enabled: false
 resource-configuration:
@@ -78,7 +62,5 @@ resource-configuration:
       size_mb: automatic
     instance_type:
       id: automatic
-vmextensions-configuration:
-- name: concourse-lb
-  cloud_properties: {}
+vmextensions-configuration: []
 
