@@ -1,0 +1,26 @@
+---
+vsphere:
+  vcenter:
+    url: https://vcsa.homelab.arg-pivotal.com
+    username: ((vcenter_user.username))
+    password: ((vcenter_user.password))
+    datastore: DS-FAST
+    ca_cert: ""
+    host: esxi.homelab.arg-pivotal.com  # vCenter host to deploy Ops Manager in
+    datacenter: Datacenter
+    resource_pool: /Datacenter/host/Physical-Cluster   # or /<Data Center Name>/host/<Cluster Name>
+    folder: /Datacenter/pcf_vms                # /<Data Center Name>/vms/<Folder>
+    insecure: 1                               # default: 0 (secure); 1 (insecure)
+  disk_type: thin                            # example: thin|thick
+  private_ip: 192.168.1.18
+  dns: 8.8.8.8
+  ntp: 0.pool.ntp.org                    # example: ntp.ubuntu.com
+  ssh_password: ((ssh_password))
+  ssh_public_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBZKp7mGAyVi+rMGn12iq2adNlrcoe+rlrCV/30UMMXfRVy3UgQUvZxxwyNuWuRlY73/yg69EJPol6mIt2gHlOnDTelWG0iOIkffy2gz5aFnImN3KnUYqx2n/2p6ZpahyIV/e0jq9W8OgyLKVC+imAWq+RjdjKfk64ORMeJrazOwhTF4kjIpt8NHC/A2tZksMTJJp0vNghMKluFK6A4e9XcMMCpsbF+o0G1p87qiDtcACvOo05CS9vHNI/Jn0H5/D8Alw08VQmzmqgC2jAgeCXLloiwyGVg26qqt6p85ODNLXuIy/Lmc0hsBGBP7fP+9QQADCdz/Xw3gfgqlg0Wnjt ubuntu"                          # for OpsManager >= 2.3
+  hostname: opsman.homelab.arg-pivotal.com
+  network: VM Network              # vcenter network to deploy to
+  netmask: 255.255.255.0
+  gateway: 192.168.1.1
+  vm_name: ops-manager                        # default: Ops_Manager
+  memory: 8                                   # default: 8 GB
+  cpu: 1                                      # default: 1
