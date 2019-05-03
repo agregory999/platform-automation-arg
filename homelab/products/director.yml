@@ -2,11 +2,11 @@ az-configuration:
 - name: AZ1
   clusters:
   - cluster: Physical-Cluster
-    resource_pool: PLAT-AUTO
-  iaas_configuration_guid: 3a405e10f4968924c416
+    resource_pool: PKS
+  iaas_configuration_guid: 761e1ddf4634967a2cc1 
 network-assignment:
   network:
-    name: control-plane
+    name: VM Network
   other_availability_zones: []
   singleton_availability_zone:
     name: AZ1
@@ -19,7 +19,7 @@ networks-configuration:
       cidr: 192.168.1.0/24
       dns: 8.8.8.8
       gateway: 192.168.1.1
-      reserved_ip_ranges: 192.168.1.1-192.168.1.20
+      reserved_ip_ranges: 192.168.1.1-192.168.1.30
       availability_zone_names:
       - AZ1
 properties-configuration:
