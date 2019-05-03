@@ -13,7 +13,7 @@ network-assignment:
 networks-configuration:
   icmp_checks_enabled: false
   networks:
-  - name: control-plane
+  - name: VM Network
     subnets:
     - iaas_identifier: VM Network
       cidr: 192.168.1.0/24
