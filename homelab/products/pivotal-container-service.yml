@@ -11,7 +11,13 @@ product-properties:
       identity: ((pks.product-properties.provider.vsphere_identity))
       password: ((pks.product-properties.provider.vsphere_password))
   .properties.cloud_provider.vsphere.vcenter_ip:
-    value: ((pks.product-properties.provider.vsphere_host))
+    value: ((pks.product-properties.provider.vcenter_host))
+  .properties.cloud_provider.vsphere.vcenter_dc:
+    value: ((pks.product-properties.provider.vcenter_dc))
+  .properties.cloud_provider.vsphere.vcenter_ds:
+    value: ((pks.product-properties.provider.vcenter_ds))
+  .properties.cloud_provider.vsphere.vcenter_vms:
+    value: ((pks.product-properties.provider.vcenter_vms))
   .properties.log_sink_resources_deploy:
     value: true
   .properties.metric_sink_resources_deploy:
@@ -30,6 +36,10 @@ product-properties:
     value: ((pks.product-properties.properties.pks_api_hostname))
   .properties.plan1_selector:
     value: Plan Active
+  .properties.plan1_selector.active.master_az_placement:
+    value: ((pks.product-properties.master_az_placement)) 
+  .properties.plan1_selector.active.worker_az_placement:
+    value: ((pks.product-properties.worker_az_placement)) 
   .properties.plan2_selector:
     value: Plan Inactive
   .properties.plan3_selector:
