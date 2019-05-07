@@ -11,7 +11,7 @@ product-properties:
       identity: ((pks.product-properties.provider.vsphere_identity))
       password: ((pks.product-properties.provider.vsphere_password))
   .properties.cloud_provider.vsphere.vcenter_ip:
-    value: ((pks.product-properties.vsphere_host))
+    value: ((pks.product-properties.provider.vsphere_host))
   .properties.log_sink_resources_deploy:
     value: true
   .properties.metric_sink_resources_deploy:
