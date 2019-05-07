@@ -1,1 +1,1 @@
-{"iaas": "vsphere", "vm_id":"/Datacenter/vm/pcf_vms/ops-manager"}
+{"iaas": "vsphere", "vm_id":"/Datacenter/vm/pks_vms/ops-manager"}
