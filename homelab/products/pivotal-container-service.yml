@@ -8,8 +8,8 @@ product-properties:
     value: vSphere
   .properties.cloud_provider.vsphere.vcenter_master_creds:
     value: 
-      identity: ((pks.product-properties.provider.vsphere_identity))
-      password: ((pks.product-properties.provider.vsphere_password))
+      identity: ((pks.product-properties.provider.vcenter_identity))
+      password: ((pks.product-properties.provider.vcenter_password))
   .properties.cloud_provider.vsphere.vcenter_ip:
     value: ((pks.product-properties.provider.vcenter_host))
   .properties.cloud_provider.vsphere.vcenter_dc:
