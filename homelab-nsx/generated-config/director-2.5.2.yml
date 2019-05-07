@@ -1,0 +1,97 @@
+az-configuration:
+- name: AZ1
+  clusters:
+  - cluster: Physical-Cluster
+    resource_pool: PKS
+  iaas_configuration_guid: e5f11218616dd3032dd8
+- name: AZ1 NSX
+  clusters:
+  - cluster: Nested-Cluster
+    resource_pool: AZ1
+  iaas_configuration_guid: a10c9b3295684f040582
+- name: AZ2 NSX
+  clusters:
+  - cluster: Nested-Cluster
+    resource_pool: AZ2
+  iaas_configuration_guid: a10c9b3295684f040582
+- name: AZ3 NSX
+  clusters:
+  - cluster: Nested-Cluster
+    resource_pool: AZ3
+  iaas_configuration_guid: a10c9b3295684f040582
+network-assignment:
+  network:
+    name: infrastructure
+  other_availability_zones: []
+  singleton_availability_zone:
+    name: AZ1
+networks-configuration:
+  icmp_checks_enabled: false
+  networks:
+  - name: infrastructure
+    subnets:
+    - iaas_identifier: VM Network
+      cidr: 192.168.1.0/24
+      dns: 8.8.8.8
+      gateway: 192.168.1.1
+      reserved_ip_ranges: 192.168.1.1-192.168.1.30
+      availability_zone_names:
+      - AZ1
+  - name: PKS-Mgmt
+    subnets:
+    - iaas_identifier: ls-pks-mgmt
+      cidr: 172.14.0.0/24
+      dns: 8.8.8.8
+      gateway: 172.14.0.1
+      reserved_ip_ranges: 172.14.0.1-172.14.0.2
+      availability_zone_names:
+      - AZ1 NSX
+      - AZ2 NSX
+      - AZ3 NSX
+properties-configuration:
+  director_configuration:
+    blobstore_type: local
+    bosh_recreate_on_next_deploy: false
+    bosh_recreate_persistent_disks_on_next_deploy: false
+    database_type: internal
+    director_worker_count: 5
+    encryption:
+      keys: []
+      providers: []
+    hm_emailer_options:
+      enabled: false
+    hm_pager_duty_options:
+      enabled: false
+    identification_tags: {}
+    job_configuration_on_tmpfs: false
+    keep_unreachable_vms: false
+    local_blobstore_options:
+      tls_enabled: true
+    ntp_servers_string: 0.pool.ntp.org
+    post_deploy_enabled: false
+    resurrector_enabled: true
+    retry_bosh_deploys: false
+    skip_director_drain: true
+  dns_configuration:
+    excluded_recursors: []
+    handlers: []
+  security_configuration:
+    generate_vm_passwords: true
+    opsmanager_root_ca_trusted_certs: false
+  syslog_configuration:
+    enabled: false
+resource-configuration:
+  compilation:
+    instances: automatic
+    instance_type:
+      id: automatic
+  director:
+    instances: automatic
+    persistent_disk:
+      size_mb: automatic
+    instance_type:
+      id: automatic
+vmextensions-configuration:
+- name: concourse-lb
+  cloud_properties: {}
+

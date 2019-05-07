@@ -78,13 +78,13 @@ product-properties:
     value: 1
 network-properties:
   network:
-    name: infrastructure
+    name: PKS-Mgmt
   other_availability_zones:
-  - name: AZ1
+  - name: AZ1 NSX
   service_network:
-    name: infrastructure
+    name: PKS-Mgmt
   singleton_availability_zone:
-    name: AZ1
+    name: AZ1 NSX
 resource-config:
   pivotal-container-service:
     instances: automatic
