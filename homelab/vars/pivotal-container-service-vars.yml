@@ -1,1 +1,9 @@
 ---
+pks:
+
+  # product-properties
+  product-properties:
+    pks_tls: ((pks/product-properties/pks_tls))
+    properties:
+      pks_api_hostname: api.pks.homelab.arg-pivotal.com
+

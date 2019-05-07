@@ -4,6 +4,8 @@ product-properties:
     value:
       cert_pem: ((pivotal-container-service_pks_tls.cert_pem))
       private_key_pem: ((pivotal-container-service_pks_tls.private_key_pem))
+      cert_pem: "((pks.product-properties.pks_tls.certificate))"
+      private_key_pem: "((pks.product-properties.pks_tls.private_key))"
   .properties.cloud_provider:
     value: vSphere
   .properties.log_sink_resources_deploy:
@@ -21,7 +23,7 @@ product-properties:
   .properties.pks-vrops:
     value: disabled
   .properties.pks_api_hostname:
-    value: api.pks.homelab.arg-pivotal.com
+    value: ((pks.product-properties.properties.pks_api_hostname))
   .properties.plan1_selector:
     value: Plan Active
   .properties.plan2_selector:
