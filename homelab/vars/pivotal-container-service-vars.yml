@@ -14,7 +14,4 @@ pks:
       vcenter_ds: DS-FAST
       vcenter_vms: pks_vms
     master_az_placement: AZ1 NSX
-    worker_az_placement: 
-    - AZ1 NSX
-    - AZ2 NSX
-    - AZ3 NSX
+    worker_az_placement: AZ1 NSX
