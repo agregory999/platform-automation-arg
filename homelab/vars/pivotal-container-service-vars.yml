@@ -6,4 +6,7 @@ pks:
     pks_tls: ((pks/product-properties/pks_tls))
     properties:
       pks_api_hostname: api.pks.homelab.arg-pivotal.com
+      vsphere_identity: "control-plane@vsphere.local"
+      vsphere_password: "Contro1@"
+      vsphere_host: "vcsa.homelab.arg-pivotal.com"
 

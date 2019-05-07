@@ -2,12 +2,16 @@ product-name: pivotal-container-service
 product-properties:
   .pivotal-container-service.pks_tls:
     value:
-      cert_pem: ((pivotal-container-service_pks_tls.cert_pem))
-      private_key_pem: ((pivotal-container-service_pks_tls.private_key_pem))
       cert_pem: "((pks.product-properties.pks_tls.certificate))"
       private_key_pem: "((pks.product-properties.pks_tls.private_key))"
   .properties.cloud_provider:
     value: vSphere
+  .properties.cloud_provider.vsphere.vcenter_master_creds:
+    value: 
+      identity: ((pks.product-properties.vsphere_identity))
+      password: ((pks.product-properties.vsphere_password))
+  .properties.cloud_provider.vsphere.vcenter_ip:
+    value: ((pks.product-properties.vsphere_host))
   .properties.log_sink_resources_deploy:
     value: true
   .properties.metric_sink_resources_deploy:
