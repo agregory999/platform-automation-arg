@@ -6,7 +6,7 @@ vsphere:
     password: ((vcenter_user.password))
     datastore: esx4Datastore
     ca_cert: ""
-    host: vesxi-67-02.homelab.arg-pivotal.com
+    host: vesxi-67-04.homelab.arg-pivotal.com
     datacenter: Nested-Datacenter
     resource_pool: AZ-MGMT   # or /<Data Center Name>/host/<Cluster Name>
     folder: /Nested-Datacenter/vm/pks_vms                # /<Data Center Name>/vms/<Folder>
