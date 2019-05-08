@@ -4,7 +4,7 @@ vsphere:
     url: https://vcsa.homelab.arg-pivotal.com
     username: ((vcenter_user.username))
     password: ((vcenter_user.password))
-    datastore: vsanDatastore
+    datastore: esx4Datastore
     ca_cert: ""
     host: vesxi-67-02.homelab.arg-pivotal.com
     datacenter: Nested-Datacenter
