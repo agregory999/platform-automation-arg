@@ -18,6 +18,7 @@ director:
       bosh_vm_folder: pks_vms
       datacenter: Nested-Datacenter
       disk_type: thin
+      guid: 761e1ddf4634967a2cc1
       ephemeral_datastores_string: vsanDatastore
       persistent_datastores_string: vsanDatastore
       name: Homelab-NSX
