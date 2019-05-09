@@ -3,10 +3,14 @@ az-configuration:
   clusters:
   - cluster: Nested-Cluster
     resource_pool: AZ1
+- name: AZ2
+  clusters:
+  - cluster: Nested-Cluster
+    resource_pool: AZ2
 network-assignment:
   network:
     name: infrastructure
-  other_availability_zones: []
+  other_availability_zones: [AZ1,AZ2]
   singleton_availability_zone:
     name: AZ1
 networks-configuration:
