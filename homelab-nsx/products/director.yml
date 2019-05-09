@@ -7,10 +7,14 @@ az-configuration:
   clusters:
   - cluster: Nested-Cluster
     resource_pool: AZ2
+- name: AZ3
+  clusters:
+  - cluster: Nested-Cluster
+    resource_pool: AZ3
 network-assignment:
   network:
     name: infrastructure
-  other_availability_zones: [AZ1,AZ2]
+  other_availability_zones: [AZ1,AZ2,AZ3]
   singleton_availability_zone:
     name: AZ1
 networks-configuration:
@@ -25,6 +29,8 @@ networks-configuration:
       reserved_ip_ranges: ((director.networks-configuration.networks.reserved_ip_ranges))
       availability_zone_names:
       - AZ1
+      - AZ2
+      - AZ3
 properties-configuration:
   director_configuration:
     allow_legacy_agents: true
