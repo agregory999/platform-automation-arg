@@ -1,9 +1,8 @@
 az-configuration:
 - name: AZ1
   clusters:
-  - cluster: Physical-Cluster
-    resource_pool: PKS
-  iaas_configuration_guid: 761e1ddf4634967a2cc1 
+  - cluster: Nested-Cluster
+    resource_pool: AZ1
 network-assignment:
   network:
     name: infrastructure
@@ -13,13 +12,13 @@ network-assignment:
 networks-configuration:
   icmp_checks_enabled: false
   networks:
-  - name: infrastructure
+  - name: ((director.networks-configuration.networks.name))
     subnets:
-    - iaas_identifier: VM Network
-      cidr: 192.168.1.0/24
+    - iaas_identifier: ((director.networks-configuration.networks.iaas_identifier))
+      cidr: ((director.networks-configuration.networks.cidr)) 
       dns: 8.8.8.8
-      gateway: 192.168.1.1
-      reserved_ip_ranges: 192.168.1.1-192.168.1.30
+      gateway: ((director.networks-configuration.networks.gateway))
+      reserved_ip_ranges: ((director.networks-configuration.networks.reserved_ip_ranges))
       availability_zone_names:
       - AZ1
 properties-configuration:
