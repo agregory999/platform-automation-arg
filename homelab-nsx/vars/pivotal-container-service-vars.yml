@@ -11,7 +11,7 @@ pks:
       vcenter_password: ((vcenter_user.password))
       vcenter_host: "vcsa.homelab.arg-pivotal.com"
       vcenter_dc: Nested-Datacenter
-      vcenter_ds: DS-FAST
+      vcenter_ds: esx2Datastore
       vcenter_vms: pks_vms
-    master_az_placement: ['AZ1 NSX']
-    worker_az_placement: ['AZ1 NSX', 'AZ2 NSX', 'AZ3 NSX']
+    master_az_placement: ['AZ1']
+    worker_az_placement: ['AZ1', 'AZ2', 'AZ3']
