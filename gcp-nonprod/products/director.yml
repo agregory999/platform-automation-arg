@@ -21,6 +21,8 @@ properties-configuration:
     s3_blobstore_options:
       bucket_name: director-blobstore
       endpoint: ((director.director-configuration.s3_blobstore_options.endpoint))
+      access_key: ((director.director-configuration.s3_blobstore_options.access_key))
+      secret_key: ((director.director-configuration.s3_blobstore_options.secret_key))
       region: Standard
       signature_version: "4"
     bosh_recreate_on_next_deploy: false

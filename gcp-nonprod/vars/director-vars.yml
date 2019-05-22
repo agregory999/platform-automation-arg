@@ -18,6 +18,8 @@ director:
     ntp_servers_string: metadata.google.internal
     s3_blobstore_options:
       endpoint: https://ecs.gcp-control-plane.arg-pivotal.com:9021/
+      access_key: object_user1
+      secret_key: ((blobstore_secret_key))
   # iaas-configuration:
   iaas-configuration:
     associated_service_account: ""
