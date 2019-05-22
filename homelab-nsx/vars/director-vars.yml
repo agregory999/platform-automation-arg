@@ -1,0 +1,35 @@
+---
+
+# Homelab Director Variables
+# Configure based on actual homelab settings for physical cluster
+
+director:
+  networks-configuration:
+    networks:
+      name: infrastructure
+      iaas_identifier: ls-pks-mgmt
+      cidr: 172.14.0.0/24
+      gateway: 172.14.0.1
+      reserved_ip_ranges: 172.14.0.1-172.14.0.2
+  properties-configuration:
+    iaas_configuration:
+      bosh_disk_path: pks_disks
+      bosh_template_folder: pks_templates
+      bosh_vm_folder: pks_vms
+      datacenter: Nested-Datacenter
+      disk_type: thin
+      guid: 761e1ddf4634967a2cc1
+      ephemeral_datastores_string: vsanDatastore
+      persistent_datastores_string: vsanDatastore
+      name: Homelab-NSX
+      nsx_address: nsxt-mgr.homelab.arg-pivotal.com
+      nsx_ca_certificate: ((nsx_ca_cert.certificate))
+      nsx_mode: nsx-t
+      nsx_networking_enabled: true
+      nsx_username: ((nsx_user.username))
+      nsx_password: ((nsx_user.password))
+      ssl_verification_enabled: false
+      vcenter_host: vcsa.homelab.arg-pivotal.com
+      vcenter_username: ((vcenter_user.username))
+      vcenter_password: ((vcenter_user.password))
+

@@ -7,11 +7,11 @@ pks:
     properties:
       pks_api_hostname: api.pks.homelab.arg-pivotal.com
     provider:
-      vcenter_identity: "control-plane@vsphere.local"
-      vcenter_password: ((pks/product-properties/provider/vcenter_password))
+      vcenter_identity: ((vcenter_user.username))
+      vcenter_password: ((vcenter_user.password))
       vcenter_host: "vcsa.homelab.arg-pivotal.com"
-      vcenter_dc: Datacenter
-      vcenter_ds: DS-FAST
+      vcenter_dc: Nested-Datacenter
+      vcenter_ds: esx2Datastore
       vcenter_vms: pks_vms
     master_az_placement: ['AZ1']
-    worker_az_placement: ['AZ1']
+    worker_az_placement: ['AZ1', 'AZ2', 'AZ3']

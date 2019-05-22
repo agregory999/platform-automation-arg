@@ -24,7 +24,7 @@ resources:
   source:
     json_key: ((gcp_json_key))
     bucket: ((gcs.buckets.automation))
-    regexp: .*tasks-(.*).zip
+    regexp: .*tasks-(.*)-arg.zip
 
 - name: platform-automation-image
   type: gcs-resource
@@ -38,7 +38,7 @@ resources:
   source:
     json_key: ((gcp_json_key))
     bucket: ((gcs.buckets.installation))
-    regexp: .*image-(.*).tgz
+    regexp: installation-after-(.*).tgz
 
 - name: product
   type: pivnet
@@ -51,7 +51,7 @@ resources:
 - name: product-stemcell
   type: pivnet
   source:
-    api_token: ((pivnet_token))
+    api_token: ((pivnet.token))
     product_slug: ((stemcell.product_slug))
     product_version: ((stemcell.product_version))
     sort_by: semver
