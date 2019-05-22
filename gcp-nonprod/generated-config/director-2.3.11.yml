@@ -1,0 +1,104 @@
+az-configuration:
+- name: us-east1-b
+  iaas_configuration_guid: 81a996bc8df75d3d6025
+- name: us-east1-c
+  iaas_configuration_guid: 81a996bc8df75d3d6025
+- name: us-east1-d
+  iaas_configuration_guid: 81a996bc8df75d3d6025
+network-assignment:
+  network:
+    name: gcp-nonprod-infrastructure-subnet
+  other_availability_zones: []
+  singleton_availability_zone:
+    name: us-east1-b
+networks-configuration:
+  icmp_checks_enabled: false
+  networks:
+  - name: gcp-nonprod-infrastructure-subnet
+    subnets:
+    - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-infrastructure-subnet/us-east1
+      cidr: 10.0.0.0/26
+      dns: 169.254.169.254, 8.8.8.8
+      gateway: 10.0.0.1
+      reserved_ip_ranges: 10.0.0.1-10.0.0.9
+      availability_zone_names:
+      - us-east1-b
+      - us-east1-c
+      - us-east1-d
+  - name: pcf-gcp-pas-subnet
+    subnets:
+    - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-pas-subnet/us-east1
+      cidr: 10.0.4.0/24
+      dns: 169.254.169.254, 8.8.8.8
+      gateway: 10.0.4.1
+      reserved_ip_ranges: 10.0.4.1-10.0.4.9
+      availability_zone_names:
+      - us-east1-b
+      - us-east1-c
+      - us-east1-d
+  - name: services
+    subnets:
+    - iaas_identifier: gcp-nonprod-pcf-network/gcp-nonprod-services-subnet/us-east1
+      cidr: 10.0.8.0/24
+      dns: 169.254.169.254, 8.8.8.8
+      gateway: 10.0.8.1
+      reserved_ip_ranges: 10.0.8.1-10.0.8.9
+      availability_zone_names:
+      - us-east1-b
+      - us-east1-c
+      - us-east1-d
+properties-configuration:
+  director_configuration:
+    allow_legacy_agents: true
+    blobstore_type: s3
+    bosh_recreate_on_next_deploy: false
+    bosh_recreate_persistent_disks_on_next_deploy: false
+    database_type: internal
+    director_worker_count: 5
+    encryption:
+      keys: []
+      providers: []
+    excluded_recursors: []
+    hm_emailer_options:
+      enabled: false
+    hm_pager_duty_options:
+      enabled: false
+    identification_tags: {}
+    keep_unreachable_vms: false
+    ntp_servers_string: metadata.google.internal
+    post_deploy_enabled: true
+    resurrector_enabled: true
+    retry_bosh_deploys: false
+    s3_blobstore_options:
+      bucket_name: director-blobstore
+      endpoint: https://ecs.gcp-control-plane.arg-pivotal.com:9021/
+      region: Standard
+      signature_version: "4"
+    skip_director_drain: true
+  dns_configuration:
+    handlers: []
+  iaas_configuration:
+    associated_service_account: ((properties-configuration_iaas_configuration_associated_service_account))
+    default_deployment_tag: ((properties-configuration_iaas_configuration_default_deployment_tag))
+    guid: ((properties-configuration_iaas_configuration_guid))
+    name: ((properties-configuration_iaas_configuration_name))
+    project: ((properties-configuration_iaas_configuration_project))
+  security_configuration:
+    generate_vm_passwords: true
+  syslog_configuration:
+    enabled: false
+resource-configuration:
+  compilation:
+    instances: automatic
+    instance_type:
+      id: automatic
+    internet_connected: true
+  director:
+    instances: automatic
+    persistent_disk:
+      size_mb: automatic
+    instance_type:
+      id: automatic
+    internet_connected: true
+vmextensions-configuration: []
+
