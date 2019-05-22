@@ -18,6 +18,11 @@ networks-configuration:
 properties-configuration:
   director_configuration:
     blobstore_type: ((director.director-configuration.blobstore_type))
+    s3_blobstore_options:
+      bucket_name: director-blobstore
+      endpoint: ((director.director-configuration.s3_blobstore_options.endpoint))
+      region: Standard
+      signature_version: "4"
     bosh_recreate_on_next_deploy: false
     database_type: ((director.director-configuration.database_type))
     director_worker_count: 5
