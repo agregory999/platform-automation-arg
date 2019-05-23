@@ -2,6 +2,8 @@ product-name: cf
 product-properties:
   .cloud_controller.allow_app_ssh_access:
     value: true
+  .cloud_controller.apps_domain:
+    value: apps.gcp-nonprod.arg-pivotal.com
   .cloud_controller.default_app_memory:
     value: 1024
   .cloud_controller.default_app_ssh_access:
@@ -25,12 +27,14 @@ product-properties:
     value: true
   .cloud_controller.staging_timeout_in_seconds:
     value: 900
+  .cloud_controller.system_domain:
+    value: sys.gcp-nonprod.arg-pivotal.com
   .diego_brain.starting_container_count_maximum:
     value: 200
   .doppler.message_drain_buffer_size:
     value: 10000
   .ha_proxy.skip_cert_verify:
-    value: false
+    value: true
   .mysql.cli_history:
     value: true
   .mysql.prevent_node_auto_rejoin:
@@ -39,6 +43,8 @@ product-properties:
     value: false
   .mysql_monitor.poll_frequency:
     value: 30
+  .mysql_monitor.recipient_email:
+    value: agregory@pivotal.io
   .mysql_monitor.write_read_delay:
     value: 20
   .mysql_proxy.shutdown_delay:
@@ -94,6 +100,13 @@ product-properties:
   .properties.credhub_hsm_provider_partition_password:
     value:
       secret: ((properties_credhub_hsm_provider_partition_password.secret))
+  .properties.credhub_key_encryption_passwords:
+    value:
+    - key:
+        secret: ((properties_credhub_key_encryption_passwords_0_key.secret))
+      name: one
+      primary: true
+      provider: internal
   .properties.diego_log_timestamp_format:
     value: rfc3339
   .properties.enable_grootfs:
@@ -109,7 +122,7 @@ product-properties:
   .properties.haproxy_client_cert_validation:
     value: none
   .properties.haproxy_forward_tls:
-    value: enable
+    value: disable
   .properties.haproxy_hsts_support:
     value: disable
   .properties.haproxy_max_buffer_size:
@@ -120,6 +133,12 @@ product-properties:
     value: enable
   .properties.mysql_activity_logging.enable.audit_logging_events:
     value: connect,query
+  .properties.networking_poe_ssl_certs:
+    value:
+    - certificate:
+        cert_pem: ((properties_networking_poe_ssl_certs_0_certificate.cert_pem))
+        private_key_pem: ((properties_networking_poe_ssl_certs_0_certificate.private_key_pem))
+      name: pcf-cert
   .properties.nfs_volume_driver:
     value: enable
   .properties.nfs_volume_driver.enable.ldap_service_account_password:
@@ -159,6 +178,8 @@ product-properties:
     value: SHA256
   .properties.secure_service_instance_credentials:
     value: false
+  .properties.security_acknowledgement:
+    value: X
   .properties.smoke_tests:
     value: on_demand
   .properties.smtp_auth_mechanism:
@@ -247,9 +268,14 @@ product-properties:
     value:
       secret: ((uaa_service_provider_key_password.secret))
 network-properties:
-  network: null
-  other_availability_zones: []
-  singleton_availability_zone: null
+  network:
+    name: pcf-gcp-pas-subnet
+  other_availability_zones:
+  - name: us-east1-b
+  - name: us-east1-c
+  - name: us-east1-d
+  singleton_availability_zone:
+    name: us-east1-b
 resource-config:
   backup-prepare:
     instances: automatic
