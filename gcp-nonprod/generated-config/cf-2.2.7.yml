@@ -199,7 +199,32 @@ product-properties:
   .properties.syslog_use_tcp_for_file_forwarding_local_transport:
     value: false
   .properties.system_blobstore:
-    value: internal
+    value: external
+  .properties.system_blobstore.external.access_key:
+    value: object_user1
+  .properties.system_blobstore.external.buildpacks_bucket:
+    value: pas-buildpacks
+  .properties.system_blobstore.external.droplets_bucket:
+    value: pas-droplets
+  .properties.system_blobstore.external.encryption:
+    value: false
+  .properties.system_blobstore.external.endpoint:
+    value: http://ecs.gcp-control-plane.arg-pivotal.com:9020
+  .properties.system_blobstore.external.iam_instance_profile_authentication:
+    value: false
+  .properties.system_blobstore.external.packages_bucket:
+    value: pas-packages
+  .properties.system_blobstore.external.region:
+    value: Standard
+  .properties.system_blobstore.external.resources_bucket:
+    value: pas-resources
+  .properties.system_blobstore.external.secret_key:
+    value:
+      secret: ((properties_system_blobstore_external_secret_key.secret))
+  .properties.system_blobstore.external.signature_version:
+    value: "4"
+  .properties.system_blobstore.external.versioning:
+    value: true
   .properties.system_blobstore_ccdroplet_max_staged_droplets_stored:
     value: 2
   .properties.system_blobstore_ccpackage_max_valid_packages_stored:
@@ -285,7 +310,7 @@ resource-config:
       id: automatic
     internet_connected: true
   blobstore:
-    instances: automatic
+    instances: 0
     persistent_disk:
       size_mb: automatic
     instance_type:
