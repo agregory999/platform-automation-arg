@@ -388,11 +388,11 @@ resource-config:
     instance_type:
       id: automatic
     internet_connected: true
-  route_syncer:
-    instances: 0
-    instance_type:
-      id: automatic
-    internet_connected: true
+#  route_syncer:
+#    instances: 0
+#    instance_type:
+#      id: automatic
+#    internet_connected: true
   router:
     instances: 1
     instance_type:
