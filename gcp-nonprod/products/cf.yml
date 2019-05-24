@@ -373,16 +373,16 @@ resource-config:
     instance_type:
       id: automatic
     internet_connected: true
-  istio_control:
-    instances: 0
-    instance_type:
-      id: automatic
-    internet_connected: true
-  istio_router:
-    instances: 0
-    instance_type:
-      id: automatic
-    internet_connected: true
+#  istio_control:
+#    instances: 0
+#    instance_type:
+#      id: automatic
+#    internet_connected: true
+#  istio_router:
+#    instances: 0
+#    instance_type:
+#      id: automatic
+#    internet_connected: true
   mysql_monitor:
     instances: automatic
     instance_type:
