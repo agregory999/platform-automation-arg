@@ -259,7 +259,7 @@ product-properties:
   .properties.system_blobstore.external.iam_instance_profile_authentication:
     value: false
   .properties.system_blobstore.external.region:
-    value: ((cf.product-properties.properties.system_blobstore.external.standard))
+    value: ((cf.product-properties.properties.system_blobstore.external.region))
   .properties.system_blobstore.external.secret_key:
     value:
       secret: ((cf.product-properties.properties.system_blobstore.external.secret_key))
