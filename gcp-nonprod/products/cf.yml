@@ -80,20 +80,20 @@ product-properties:
     value: false
   .properties.cf_networking_internal_domain:
     value: apps.internal
-  .properties.cloud_controller_completed_tasks_cutoff_age_in_days:
-    value: 31
+#  .properties.cloud_controller_completed_tasks_cutoff_age_in_days:
+#    value: 31
   .properties.cloud_controller_default_health_check_timeout:
     value: 60
-  .properties.cloud_controller_temporary_disable_deployments:
-    value: false
+#  .properties.cloud_controller_temporary_disable_deployments:
+#    value: false
   .properties.container_networking:
     value: enable
   .properties.container_networking_interface_plugin:
     value: silk
   .properties.container_networking_interface_plugin.silk.enable_log_traffic:
     value: false
-  .properties.container_networking_interface_plugin.silk.enable_policy_enforcement:
-    value: true
+#  .properties.container_networking_interface_plugin.silk.enable_policy_enforcement:
+#    value: true
   .properties.container_networking_interface_plugin.silk.iptables_accepted_udp_logs_per_sec:
     value: 100
   .properties.container_networking_interface_plugin.silk.iptables_denied_logs_per_sec:
@@ -119,12 +119,12 @@ product-properties:
     value: 100
   .properties.diego_log_timestamp_format:
     value: rfc3339
-  .properties.enable_smb_volume_driver:
-    value: false
-  .properties.enable_tls_to_internal_pxc:
-    value: false
-  .properties.experimental_dynamic_egress_enforcement:
-    value: false
+#  .properties.enable_smb_volume_driver:
+#    value: false
+#  .properties.enable_tls_to_internal_pxc:
+#    value: false
+#  .properties.experimental_dynamic_egress_enforcement:
+#    value: false
   .properties.garden_disk_cleanup:
     value: reserved
   .properties.gorouter_ssl_ciphers:
@@ -139,16 +139,16 @@ product-properties:
     value: 16384
   .properties.haproxy_ssl_ciphers:
     value: DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384
-  .properties.istio:
-    value: disable
+#  .properties.istio:
+#    value: disable
   .properties.locket_database_max_open_connections:
     value: 200
-  .properties.metric_registrar_blacklisted_tags:
-    value: deployment,job,index,id
-  .properties.metric_registrar_enabled:
-    value: false
-  .properties.metric_registrar_scrape_interval_in_seconds:
-    value: 35
+#  .properties.metric_registrar_blacklisted_tags:
+#    value: deployment,job,index,id
+#  .properties.metric_registrar_enabled:
+#    value: false
+#  .properties.metric_registrar_scrape_interval_in_seconds:
+#    value: 35
   .properties.mysql_activity_logging:
     value: enable
   .properties.mysql_activity_logging.enable.audit_logging_events:
@@ -217,8 +217,8 @@ product-properties:
       password:
   .properties.smtp_enable_starttls_auto:
     value: false
-  .properties.stack_migration_acknowledgement:
-    value: X
+#  .properties.stack_migration_acknowledgement:
+#    value: X
   .properties.syslog_drop_debug:
     value: true
   .properties.syslog_metrics_to_syslog_enabled:
