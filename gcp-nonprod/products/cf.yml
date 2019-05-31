@@ -421,8 +421,8 @@ errand-config:
     post-deploy-state: false
   push-usage-service:
     post-deploy-state: false
-  smbbrokerpush:
-    post-deploy-state: false
+#  smbbrokerpush:
+#    post-deploy-state: false
   smoke_tests:
     post-deploy-state: false
   test-autoscaling:
