@@ -19,8 +19,8 @@ director:
       datacenter: Nested-Datacenter
       disk_type: thin
       guid: 761e1ddf4634967a2cc1
-      ephemeral_datastores_string: vsanDatastore
-      persistent_datastores_string: vsanDatastore
+      ephemeral_datastores_string: esx4Datastore
+      persistent_datastores_string: esx4Datastore
       name: Homelab-NSX
       nsx_address: nsxt-mgr.homelab.arg-pivotal.com
       nsx_ca_certificate: ((nsx_ca_cert.certificate))
