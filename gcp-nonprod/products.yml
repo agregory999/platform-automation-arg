@@ -10,10 +10,10 @@ products:
 
   # ==== Ops Manager
   opsman:
-    product-version: "2.3.17"
+    product-version: "2.3.18"
     pivnet-product-slug: ops-manager
     pivnet-api-token: ((pivnet_token))
-    pivnet-file-glob: "*-gcp-*"
+    pivnet-file-glob: "*GCP*.yml"
 
   # ==== Products
 
