@@ -17,7 +17,7 @@ pks:
         type: GCP
         gcp:
           project_id: "((pks/product-properties/project_id))"
-          network: infrastructure
+          network: gcp-nonprod-infrastructure-subnet
           master_service_account: "((pks/product-properties/master_service_account))"
           worker_service_account: "((pks/product-properties/worker_service_account))"
       pks_api_hostname: "((pks/product-properties/pks_api_hostname))"
@@ -27,7 +27,10 @@ pks:
           master_az_placement: ["us-east1-b", "us-east1-c", "us-east1-d"]
           worker_az_placement: ["us-east1-b", "us-east1-c", "us-east1-d"]
       plan2_selector:
-        status: "Plan Inactive"
+        status: "Plan Active"
+        active:
+          master_az_placement: ["us-east1-b", "us-east1-c", "us-east1-d"]
+          worker_az_placement: ["us-east1-b", "us-east1-c", "us-east1-d"]
       plan3_selector:
         status: "Plan Inactive"
       vm_extensions: ["public_ip"]
