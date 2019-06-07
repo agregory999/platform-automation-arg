@@ -6,7 +6,8 @@ az-configuration:
 - name: us-east1-b
   iaas_configuration_guid: f785adaff5736818fd76
 iaas-configurations:
-- associated_service_account: ((iaas-configurations_0_associated_service_account))
+- additional_cloud_properties: {}
+  associated_service_account: ((iaas-configurations_0_associated_service_account))
   default_deployment_tag: ((iaas-configurations_0_default_deployment_tag))
   name: ((iaas-configurations_0_name))
   project: ((iaas-configurations_0_project))
@@ -53,10 +54,34 @@ networks-configuration:
       - us-east1-c
       - us-east1-d
 properties-configuration:
-  director_configuration: []
+  director_configuration:
+    blobstore_type: s3
+    bosh_recreate_on_next_deploy: false
+    bosh_recreate_persistent_disks_on_next_deploy: false
+    database_type: internal
+    director_worker_count: 5
+    encryption: []
+    hm_emailer_options:
+      enabled: false
+    hm_pager_duty_options:
+      enabled: false
+    identification_tags: {}
+    job_configuration_on_tmpfs: false
+    keep_unreachable_vms: false
+    ntp_servers_string: metadata.google.internal
+    post_deploy_enabled: true
+    resurrector_enabled: true
+    retry_bosh_deploys: false
+    s3_blobstore_options:
+      bucket_name: director-blobstore
+      endpoint: http://ecs.gcp-control-plane.arg-pivotal.com:9020/
+      region: Standard
+      signature_version: "4"
+    skip_director_drain: false
   dns_configuration: []
   security_configuration:
     generate_vm_passwords: ((properties-configuration_security_configuration_generate_vm_passwords))
+    opsmanager_root_ca_trusted_certs: false
   syslog_configuration:
     enabled: false
 resource-configuration:
