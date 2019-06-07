@@ -48,6 +48,10 @@ product-properties:
     value: small-psp
   .properties.plan2_selector.active.admission_plugins:
     value: [pod_security_policy]
+  .properties.plan2_selector.active.worker_instances:
+    value: 3
+  .properties.plan2_selector.active.master_instances:
+    value: 1
   .properties.plan3_selector:
     value: Plan Inactive
   .properties.plan4_selector:
