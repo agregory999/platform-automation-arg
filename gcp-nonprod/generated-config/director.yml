@@ -1,9 +1,9 @@
 az-configuration:
-- name: us-east1-b
+- name: us-east1-d
   iaas_configuration_guid: f785adaff5736818fd76
 - name: us-east1-c
   iaas_configuration_guid: f785adaff5736818fd76
-- name: us-east1-d
+- name: us-east1-b
   iaas_configuration_guid: f785adaff5736818fd76
 iaas-configurations:
 - associated_service_account: ((iaas-configurations_0_associated_service_account))
