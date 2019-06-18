@@ -353,7 +353,7 @@ resource-config:
   compute:
     instances: 2
     instance_type:
-      id: automatic
+      id: large.disk
     internet_connected: true
     additional_networks: ((cf.resource-config.compute.additional_networks))
   control:
