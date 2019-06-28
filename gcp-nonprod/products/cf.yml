@@ -359,7 +359,7 @@ resource-config:
   control:
     instances: 1
     instance_type:
-      id: automatic
+      vm_type_id: xlarge
     internet_connected: true
   database:
     instances: 1
