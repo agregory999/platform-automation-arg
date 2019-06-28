@@ -353,7 +353,7 @@ resource-config:
   compute:
     instances: 2
     instance_type:
-      id: large.disk
+      vm_type_id: custom.cell.2vc.32g.64g
     internet_connected: true
     additional_networks: ((cf.resource-config.compute.additional_networks))
   control:
