@@ -13,7 +13,7 @@ director:
 
   # director-configuration
   director-configuration:
-    blobstore_type: internal
+    blobstore_type: local
     database_type: internal
     ntp_servers_string: metadata.google.internal
   # iaas-configuration:
