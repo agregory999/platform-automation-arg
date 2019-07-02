@@ -13,13 +13,9 @@ director:
 
   # director-configuration
   director-configuration:
-    blobstore_type: s3
+    blobstore_type: internal
     database_type: internal
     ntp_servers_string: metadata.google.internal
-    s3_blobstore_options:
-      endpoint: http://ecs.gcp-control-plane.arg-pivotal.com:9020/
-      access_key: object_user1
-      secret_key: ((blobstore_secret_key))
   # iaas-configuration:
   iaas-configuration:
     associated_service_account: ""
