@@ -30,19 +30,20 @@ cf:
 #          droplets_bucket: fe-agregory-gcp-nonprod-droplets
 #          packages_bucket: fe-agregory-gcp-nonprod-packages
 #          resources_bucket: fe-agregory-gcp-nonprod-resources
-         type: external
-         external:
-           access_key: object_user1
-           secret_key: ((cf/product-properties/system_blobstore_external_secret_key))
-           buildpacks_bucket: pas-buildpacks
-           droplets_bucket: pas-droplets
-           packages_bucket: pas-packages
-           resources_bucket: pas-resource
-           endpoint: ((cf/product-properties/system_blobstore_external_endpoint))
-           encryption: false
-           region: Standard
-           versioning: true
-           signature_version: "4"
+#         type: external
+#         external:
+#           access_key: object_user1
+#           secret_key: ((cf/product-properties/system_blobstore_external_secret_key))
+#           buildpacks_bucket: pas-buildpacks
+#           droplets_bucket: pas-droplets
+#           packages_bucket: pas-packages
+#           resources_bucket: pas-resource
+#           endpoint: ((cf/product-properties/system_blobstore_external_endpoint))
+#           encryption: false
+#           region: Standard
+#           versioning: true
+#           signature_version: "4"
+         type: internal
   # network-properties
   network-properties: 
     network: {name: gcp-nonprod-pas-subnet}
