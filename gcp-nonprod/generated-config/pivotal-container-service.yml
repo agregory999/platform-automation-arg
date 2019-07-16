@@ -4,17 +4,12 @@ product-properties:
     value:
       cert_pem: ((pivotal-container-service_pks_tls.cert_pem))
       private_key_pem: ((pivotal-container-service_pks_tls.private_key_pem))
-  .properties.cloud_provider:
-    selected_option: gcp
-    value: GCP
-  .properties.cloud_provider.gcp.master_service_account:
-    value: gcp-nonprod-pks-pks-master@fe-agregory.iam.gserviceaccount.com
-  .properties.cloud_provider.gcp.network:
-    value: gcp-nonprod-infrastructure-subnet
-  .properties.cloud_provider.gcp.project_id:
-    value: fe-agregory
-  .properties.cloud_provider.gcp.worker_service_account:
-    value: gcp-nonprod-pks-pks-worker@fe-agregory.iam.gserviceaccount.com
+  .properties.cloud_provider.azure.azure_cloud_name:
+    value: AzurePublicCloud
+  .properties.cloud_provider.vsphere.vcenter_master_creds:
+    value:
+      identity: ((properties_cloud_provider_vsphere_vcenter_master_creds.identity))
+      password: ((properties_cloud_provider_vsphere_vcenter_master_creds.password))
   .properties.log_sink_resources_deploy:
     value: true
   .properties.metric_sink_resources_deploy:
@@ -32,8 +27,6 @@ product-properties:
   .properties.pks-vrops:
     selected_option: disabled
     value: disabled
-  .properties.pks_api_hostname:
-    value: pks-api.gcp-nonprod.arg-pivotal.com
   .properties.plan1_selector:
     selected_option: active
     value: Plan Active
@@ -42,53 +35,17 @@ product-properties:
   .properties.plan1_selector.active.description:
     value: 'Example: This plan will configure a lightweight kubernetes cluster. Not
       recommended for production workloads.'
-  .properties.plan1_selector.active.master_az_placement:
-    value:
-    - us-east1-b
-    - us-east1-c
-    - us-east1-d
   .properties.plan1_selector.active.master_instances:
     value: 1
   .properties.plan1_selector.active.max_worker_instances:
     value: 50
   .properties.plan1_selector.active.name:
-    value: small-vanilla
-  .properties.plan1_selector.active.worker_az_placement:
-    value:
-    - us-east1-b
-    - us-east1-c
-    - us-east1-d
+    value: small
   .properties.plan1_selector.active.worker_instances:
     value: 3
   .properties.plan2_selector:
-    selected_option: active
-    value: Plan Active
-  .properties.plan2_selector.active.admission_plugins:
-    value:
-    - pod_security_policy
-  .properties.plan2_selector.active.allow_privileged_containers:
-    value: false
-  .properties.plan2_selector.active.description:
-    value: 'Example: This plan will configure a medium sized kubernetes cluster, suitable
-      for more pods.'
-  .properties.plan2_selector.active.master_az_placement:
-    value:
-    - us-east1-b
-    - us-east1-c
-    - us-east1-d
-  .properties.plan2_selector.active.master_instances:
-    value: 1
-  .properties.plan2_selector.active.max_worker_instances:
-    value: 50
-  .properties.plan2_selector.active.name:
-    value: small-psp
-  .properties.plan2_selector.active.worker_az_placement:
-    value:
-    - us-east1-b
-    - us-east1-c
-    - us-east1-d
-  .properties.plan2_selector.active.worker_instances:
-    value: 3
+    selected_option: inactive
+    value: Plan Inactive
   .properties.plan3_selector:
     selected_option: inactive
     value: Plan Inactive
@@ -119,9 +76,14 @@ product-properties:
   .properties.syslog_selector:
     selected_option: disabled
     value: disabled
-  .properties.telemetry_selector:
-    selected_option: disabled
-    value: disabled
+  .properties.telemetry_selector.enabled.billing_polling_interval:
+    value: 60
+  .properties.telemetry_selector.enabled.environment_provider:
+    value: none
+  .properties.telemetry_selector.enabled.telemetry_polling_interval:
+    value: 600
+  .properties.telemetry_selector.enabled.telemetry_url:
+    value: https://vcsa.vmware.com/ph
   .properties.uaa:
     selected_option: internal
     value: internal
@@ -131,25 +93,16 @@ product-properties:
     value: 600
   .properties.uaa_pks_cli_refresh_token_lifetime:
     value: 21600
-  .properties.vm_extensions:
-    value:
-    - public_ip
   .properties.wavefront:
     selected_option: disabled
     value: disabled
   .properties.worker_max_in_flight:
     value: 1
 network-properties:
-  network:
-    name: gcp-nonprod-infrastructure-subnet
-  other_availability_zones:
-  - name: us-east1-b
-  - name: us-east1-c
-  - name: us-east1-d
-  service_network:
-    name: gcp-nonprod-services-subnet
-  singleton_availability_zone:
-    name: us-east1-b
+  network: null
+  other_availability_zones: []
+  service_network: null
+  singleton_availability_zone: null
 resource-config:
   pivotal-container-service:
     instances: automatic
@@ -158,8 +111,6 @@ resource-config:
     instance_type:
       id: automatic
     internet_connected: true
-    elb_names:
-    - tcp:gcp-nonprod-pks-pks-api
 errand-config:
   delete-all-clusters:
     pre-delete-state: true
@@ -168,7 +119,7 @@ errand-config:
   smoke-tests:
     post-deploy-state: false
   upgrade-all-service-instances:
-    post-deploy-state: false
+    post-deploy-state: true
   wavefront-alert-creation:
     post-deploy-state: false
   wavefront-alert-deletion:
