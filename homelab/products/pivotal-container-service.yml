@@ -88,7 +88,7 @@ product-properties:
     value: Plan Active
   .properties.plan5_selector.active.name:
     value: ((pks.product-properties.plan5_name)) 
-  .properties.plan1_selector.active.worker_instances:
+  .properties.plan5_selector.active.worker_instances:
     value: 3
   .properties.plan5_selector.active.master_az_placement:
     value: ((pks.product-properties.master_az_placement)) 
