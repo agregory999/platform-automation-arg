@@ -5,6 +5,8 @@
 
 director:
   properties-configuration:
+    director_configuration:
+      direcot_hostname: bosh-pks.homelab.arg-pivotal.com
     iaas_configuration:
       bosh_disk_path: pks_disks
       bosh_template_folder: pks_templates

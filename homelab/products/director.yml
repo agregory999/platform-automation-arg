@@ -30,6 +30,7 @@ properties-configuration:
     bosh_recreate_persistent_disks_on_next_deploy: false
     database_type: internal
     director_worker_count: 5
+    director_hostname: ((director.properties-configuration.director_configuration.director_hostname))
     encryption:
       keys: []
       providers: []
