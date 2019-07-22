@@ -15,3 +15,8 @@ pks:
       vcenter_vms: pks_vms
     master_az_placement: ['AZ1']
     worker_az_placement: ['AZ1']
+    plan1_name: small-vanilla
+    plan2_name: small-psp
+    plan3_name: small-priv
+    plan4_name: medium-vanilla
+    plan5_name: medium-psp
