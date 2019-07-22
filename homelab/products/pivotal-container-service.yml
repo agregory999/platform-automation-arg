@@ -69,7 +69,9 @@ product-properties:
   .properties.plan3_selector.active.worker_az_placement:
     value: ((pks.product-properties.worker_az_placement)) 
   .properties.plan3_selector.active.admission_plugins:
-    value: ['allow_privileged_containers']
+    value: []
+  .properties.plan3_selector.active.allow_privileged_containers:
+    value: 1
   .properties.plan4_selector:
     value: Plan Active
   .properties.plan4_selector.active.name:
