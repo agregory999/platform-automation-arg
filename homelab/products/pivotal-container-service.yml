@@ -38,6 +38,8 @@ product-properties:
     value: Plan Active
   .properties.plan1_selector.active.name:
     value: ((pks.product-properties.plan1_name)) 
+  .properties.plan1_selector.active.description:
+    value: ((pks.product-properties.plan1_description)) 
   .properties.plan1_selector.active.worker_instances:
     value: 1
   .properties.plan1_selector.active.master_instances:
@@ -52,6 +54,8 @@ product-properties:
     value: Plan Active
   .properties.plan2_selector.active.name:
     value: ((pks.product-properties.plan2_name)) 
+  .properties.plan2_selector.active.description:
+    value: ((pks.product-properties.plan2_description)) 
   .properties.plan2_selector.active.worker_instances:
     value: 1
   .properties.plan2_selector.active.master_instances:
@@ -65,7 +69,9 @@ product-properties:
   .properties.plan3_selector:
     value: Plan Active
   .properties.plan3_selector.active.name:
-    value: ((pks.product-properties.plan3_name)) 
+    value: ((pks.product-properties.plan2_name)) 
+  .properties.plan3_selector.active.description:
+    value: ((pks.product-properties.plan3_description)) 
   .properties.plan3_selector.active.worker_instances:
     value: 1
   .properties.plan3_selector.active.master_instances:
@@ -82,6 +88,8 @@ product-properties:
     value: Plan Active
   .properties.plan4_selector.active.name:
     value: ((pks.product-properties.plan4_name)) 
+  .properties.plan4_selector.active.description:
+    value: ((pks.product-properties.plan4_description)) 
   .properties.plan4_selector.active.worker_instances:
     value: 3
   .properties.plan4_selector.active.master_az_placement:
@@ -94,6 +102,8 @@ product-properties:
     value: Plan Active
   .properties.plan5_selector.active.name:
     value: ((pks.product-properties.plan5_name)) 
+  .properties.plan5_selector.active.description:
+    value: ((pks.product-properties.plan5_description)) 
   .properties.plan5_selector.active.worker_instances:
     value: 3
   .properties.plan5_selector.active.master_az_placement:

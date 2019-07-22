@@ -16,7 +16,12 @@ pks:
     master_az_placement: ['AZ1']
     worker_az_placement: ['AZ1']
     plan1_name: small-vanilla
+    plan1_description: "Single master and single worker with no admission controllers and no privileged containers"
     plan2_name: small-psp
+    plan2_description: "Single master and single worker with PSP and no privileged containers"
     plan3_name: small-priv
+    plan3_description: "Single master and single worker with no admission controllers and privileged containers"
     plan4_name: medium-vanilla
+    plan4_description: "Multiple master and 3 workers with no admission controllers and no privileged containers"
     plan5_name: medium-psp
+    plan5_description: "Multiple master and 3 workers with PSP and no privileged containers"
