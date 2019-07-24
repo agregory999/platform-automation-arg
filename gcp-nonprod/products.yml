@@ -33,9 +33,3 @@ products:
     pivnet-file-glob: "srt-*.pivotal"           # For full fledged PAS, use "cf-*.pivotal"
     stemcell-iaas: google
 
-  rabbit:
-    product-version: "1.16.4"
-    pivnet-product-slug: p-rabbitmq
-    pivnet-api-token: ((pivnet_token))
-    pivnet-file-glob: "p-rabbitmq-*.pivotal" 
-    stemcell-iaas: google
