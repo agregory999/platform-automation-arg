@@ -42,8 +42,8 @@ cf:
 #           encryption: false
 #           region: Standard
 #           versioning: true
+#           signature_version: "4"
          type: internal
-          signature_version: "4"
   # network-properties
   network-properties: 
     network: {name: gcp-nonprod-pas-subnet}
