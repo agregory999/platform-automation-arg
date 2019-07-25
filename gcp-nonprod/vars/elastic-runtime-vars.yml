@@ -21,7 +21,7 @@ cf:
       credhub_key_encryption_passwords: ((cf/product-properties/credhub_key_encryption_passwords))
       gorouter_ssl_ciphers: ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384
       networking_poe_ssl_certs: ((cf/product-properties/networking_poe_ssl_certs))
-      system_blobstore:
+      system_blobstore: internal
 #        type: external_gcs
 #        external_gcs:
 #          access_key: ((cf/product-properties/system_blobstore_external_gcs_access_key))
@@ -43,7 +43,6 @@ cf:
 #           region: Standard
 #           versioning: true
 #           signature_version: "4"
-         type: internal
   # network-properties
   network-properties: 
     network: {name: gcp-nonprod-pas-subnet}
