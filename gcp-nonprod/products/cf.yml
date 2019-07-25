@@ -125,8 +125,8 @@ product-properties:
 #    value: false
 #  .properties.experimental_dynamic_egress_enforcement:
 #    value: false
-  .properties.garden_disk_cleanup:
-    value: threshold
+#  .properties.garden_disk_cleanup:
+#    value: threshold
   .properties.gorouter_ssl_ciphers:
     value: ECDHE-RSA-AES128-GCM-SHA256:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
   .properties.haproxy_client_cert_validation:
