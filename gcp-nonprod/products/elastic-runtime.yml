@@ -228,7 +228,11 @@ product-properties:
   .properties.syslog_use_tcp_for_file_forwarding_local_transport:
     value: false
   .properties.system_blobstore:
-    value: "((cf.product-properties.properties.system_blobstore.type))"
+    selected_option: internal
+    value: internal
+
+#  .properties.system_blobstore:
+#    value: "((cf.product-properties.properties.system_blobstore.type))"
 #  .properties.system_blobstore.external_gcs.access_key:
 #    value: "((cf.product-properties.properties.system_blobstore.external_gcs.access_key))"
 #  .properties.system_blobstore.external_gcs.buildpacks_bucket:
@@ -242,31 +246,31 @@ product-properties:
 #  .properties.system_blobstore.external_gcs.secret_key:
 #    value:
 #      secret: "((cf.product-properties.properties.system_blobstore.external_gcs.secret_key))"
-  .properties.system_blobstore.external.access_key:
-    value: ((cf.product-properties.properties.system_blobstore.external.access_key))
-  .properties.system_blobstore.external.buildpacks_bucket:
-    value: ((cf.product-properties.properties.system_blobstore.external.buildpacks_bucket))
-  .properties.system_blobstore.external.droplets_bucket:
-    value: ((cf.product-properties.properties.system_blobstore.external.droplets_bucket))
-  .properties.system_blobstore.external.packages_bucket:
-    value: ((cf.product-properties.properties.system_blobstore.external.packages_bucket))
-  .properties.system_blobstore.external.resources_bucket:
-    value: ((cf.product-properties.properties.system_blobstore.external.resources_bucket))
-  .properties.system_blobstore.external.encryption:
-    value: false
-  .properties.system_blobstore.external.endpoint:
-    value: ((cf.product-properties.properties.system_blobstore.external.endpoint))
-  .properties.system_blobstore.external.iam_instance_profile_authentication:
-    value: false
-  .properties.system_blobstore.external.region:
-    value: ((cf.product-properties.properties.system_blobstore.external.region))
-  .properties.system_blobstore.external.secret_key:
-    value:
-      secret: ((cf.product-properties.properties.system_blobstore.external.secret_key))
-  .properties.system_blobstore.external.signature_version:
-    value: ((cf.product-properties.properties.system_blobstore.external.signature_version))
-  .properties.system_blobstore.external.versioning:
-    value: ((cf.product-properties.properties.system_blobstore.external.versioning))
+#  .properties.system_blobstore.external.access_key:
+#    value: ((cf.product-properties.properties.system_blobstore.external.access_key))
+#  .properties.system_blobstore.external.buildpacks_bucket:
+#    value: ((cf.product-properties.properties.system_blobstore.external.buildpacks_bucket))
+#  .properties.system_blobstore.external.droplets_bucket:
+#    value: ((cf.product-properties.properties.system_blobstore.external.droplets_bucket))
+##  .properties.system_blobstore.external.packages_bucket:
+#    value: ((cf.product-properties.properties.system_blobstore.external.packages_bucket))
+#  .properties.system_blobstore.external.resources_bucket:
+#    value: ((cf.product-properties.properties.system_blobstore.external.resources_bucket))
+##  .properties.system_blobstore.external.encryption:
+#    value: false
+#  .properties.system_blobstore.external.endpoint:
+#    value: ((cf.product-properties.properties.system_blobstore.external.endpoint))
+#  .properties.system_blobstore.external.iam_instance_profile_authentication:
+#    value: false
+#  .properties.system_blobstore.external.region:
+#    value: ((cf.product-properties.properties.system_blobstore.external.region))
+#  .properties.system_blobstore.external.secret_key:
+#    value:
+#      secret: ((cf.product-properties.properties.system_blobstore.external.secret_key))
+#  .properties.system_blobstore.external.signature_version:
+#    value: ((cf.product-properties.properties.system_blobstore.external.signature_version))
+#  .properties.system_blobstore.external.versioning:
+#    value: ((cf.product-properties.properties.system_blobstore.external.versioning))
   .properties.system_blobstore_ccdroplet_max_staged_droplets_stored:
     value: 2
   .properties.system_blobstore_ccpackage_max_valid_packages_stored:
