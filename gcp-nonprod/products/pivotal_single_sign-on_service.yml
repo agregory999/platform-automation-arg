@@ -1,8 +1,8 @@
 product-name: Pivotal_Single_Sign-On_Service
 network-properties:
   network: null
-  other_availability_zones: []
-  singleton_availability_zone: null
+  other_availability_zones: ['us-east1-b','us-east1-c','us-east1-d']
+  singleton_availability_zone: us-east1-d
 resource-config:
   deploy-service-broker:
     instances: automatic
