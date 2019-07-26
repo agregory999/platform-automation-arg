@@ -33,3 +33,9 @@ products:
     pivnet-file-glob: "srt-*.pivotal"   # For full fledged PAS, use "cf-*.pivotal"
     stemcell-iaas: google
 
+  sso: 
+    product-version: "1.9.1"
+    pivnet-product-slug: pivotal_single_sign-on_service
+    pivnet-api-token: ((pivnet_token))
+    pivnet-file-glob: "Pivotal_Single_Sign-On_Service*.pivotal"
+    stemcell-iaas: google
