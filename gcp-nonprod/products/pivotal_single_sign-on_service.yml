@@ -2,7 +2,7 @@ product-name: Pivotal_Single_Sign-On_Service
 network-properties:
   network: gcp-nonprod-pas-subnet
   other_availability_zones: ['us-east1-b','us-east1-c','us-east1-d']
-  singleton_availability_zone: us-east1-b
+  singleton_availability_zone: "us-east1-b"
 resource-config:
   deploy-service-broker:
     instances: automatic
