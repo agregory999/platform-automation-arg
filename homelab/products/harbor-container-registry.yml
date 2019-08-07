@@ -1,0 +1,108 @@
+product-name: harbor-container-registry
+product-properties:
+  .properties.hostname
+    value: harbor.homelab.arg-pivotal.com
+  .properties.harbor-app.static_ips
+    value: 192.168.1.20
+  .properties.admin_password:
+    value: admin00
+  .properties.admin_password_for_smoketest:
+    value: admin00
+  .properties.auth_mode:
+    selected_option: db_auth
+    value: db_auth
+  .properties.clair_updater_interval:
+    value: 0
+  .properties.customize_container_network:
+    selected_option: default
+    value: default
+  .properties.no_proxy:
+    value: 127.0.0.1,localhost,ui,registry
+  .properties.registry_storage:
+    selected_option: filesystem
+    value: filesystem
+  .properties.server_cert_key:
+    value:
+      cert_pem: |
+        -----BEGIN CERTIFICATE-----
+        MIIDkzCCAnugAwIBAgIUE+o09DZhKyNV8wuAV6ZoVcxijacwDQYJKoZIhvcNAQEL
+        BQAwHzELMAkGA1UEBhMCVVMxEDAOBgNVBAoMB1Bpdm90YWwwHhcNMTkwODA2MTUx
+        ODQxWhcNMjEwODA2MTUxODQxWjBIMQswCQYDVQQGEwJVUzEQMA4GA1UECgwHUGl2
+        b3RhbDEnMCUGA1UEAwweaGFyYm9yLmhvbWVsYWIuYXJnLXBpdm90YWwuY29tMIIB
+        IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzVy6tY9nM8+nT7eNqc4prFqy
+        cTKjYDzHOk9jhddKu81AMhfY+sgSYg+Xh/SXzyVlBYBhWDgKZWrZJEGtfQ0F6+2u
+        +6A3UbWVyNQBvePDvkkb1g+GPtCpbnYqFznSNAqrwlx4xJPHutHLpG6ClTR+ECTZ
+        nTgD6v6xRmJAtcaz7XAFpp4yUDuAhWq228rOA4AAhP2ystlk+Dy2Hy49gkhayeNY
+        POa8msK25mD5hTE7CNDwzw8Sx73joKxUg6GGwvKWTSlX31ANUdzUZNNjMv1NkoVn
+        wds+VFYrJD2Hoah3GOxH3Vgf32GmrD0ydhcrmueJRdL2MdIiNO7Li90Od9q8sQID
+        AQABo4GdMIGaMB0GA1UdDgQWBBTSwFtknHuFcOJILd2eBNH0CEiTvDAfBgNVHSME
+        GDAWgBRjQWmZSBnaejo5B7akColrS7BufzAdBgNVHSUEFjAUBggrBgEFBQcDAgYI
+        KwYBBQUHAwEwDgYDVR0PAQH/BAQDAgeAMCkGA1UdEQQiMCCCHmhhcmJvci5ob21l
+        bGFiLmFyZy1waXZvdGFsLmNvbTANBgkqhkiG9w0BAQsFAAOCAQEAZPvTR0UeuA59
+        UTltJJPrKnRXenTOe0px9EOHoXPujvqKe+LatVJsZHmb5MCGS7oNm9KMULa48CjA
+        otuyGNl7+DElGS80kwue9nc7SkJbH1xCcOz+j+uXQFcVimC+tEEDLlLDpDjSR0zT
+        M/PD5Ff7eyk90LVB9G3PB6sPqqyfQm/IaMInsrMOGmRN4jcS6VqQnMPeKRViKqLy
+        FlAQJA7uEnq/fVgGaL/VzO91eckck3V/kNJS1EDozeMRHCeP+34PKw0IXmv9ugkq
+        p62OAJkciZi9WG+7rc8EoOz8IjtSzL7g4yZ2FKZejmaSfgu8O/9y1qrjlzKGYhH2
+        8hwsvAQ+zg==
+        -----END CERTIFICATE-----
+      private_key_pem: |
+        -----BEGIN RSA PRIVATE KEY-----
+        MIIEpAIBAAKCAQEAzVy6tY9nM8+nT7eNqc4prFqycTKjYDzHOk9jhddKu81AMhfY
+        +sgSYg+Xh/SXzyVlBYBhWDgKZWrZJEGtfQ0F6+2u+6A3UbWVyNQBvePDvkkb1g+G
+        PtCpbnYqFznSNAqrwlx4xJPHutHLpG6ClTR+ECTZnTgD6v6xRmJAtcaz7XAFpp4y
+        UDuAhWq228rOA4AAhP2ystlk+Dy2Hy49gkhayeNYPOa8msK25mD5hTE7CNDwzw8S
+        x73joKxUg6GGwvKWTSlX31ANUdzUZNNjMv1NkoVnwds+VFYrJD2Hoah3GOxH3Vgf
+        32GmrD0ydhcrmueJRdL2MdIiNO7Li90Od9q8sQIDAQABAoIBAH8e/5SUCFZSHEeE
+        X/TU4YcHPZ5Esk1IUisOKZUYB/Lowuw/Rtk2L+rzq+FEzxQzGa2mIpvxVL4ivfdr
+        kHDwNtIsdzzbmGLD/MwsMEfTTb/kkY6YXYlUsQznqHZoHG6KjHfrtfY5ZFGIvH40
+        yjCCJeboaKyhmAtHTYU8HMJpFcfLi6aNdXJJHTX0lZflkjFZnxkXyyWS+jmnoBZq
+        mwqnt34GScSpT2anAs5tmm5NG9bJbeqqssPx2WjOeZ2cs7FyE1yJoo+GbrCsPEFW
+        GLKeTVkH+k3vSXuJEnHpCbQIN9JRQ326p4CRC8xI2+1DmxMM3ZRPe9BzzN+xlep0
+        OgphImECgYEA9cptDZKurJSfweJY3+zfZK/2MJkCK9pwuBAuyuSjseUoAO620p8s
+        f4D3vwMR5jLe+N0/D9cgGbbDWsWvzrQEOcaCoNfXjtgQUTHZm9lWc4F8HvLEjJgL
+        Rf5W2KSEScZjoXyG8t4YmfW9Q4Om5fNb4mYs/bg/ObxJvu1op1hiBlMCgYEA1eRp
+        6WyifQO2cDnXcD2gdFZS2k/Ev19P8cDIT5kIJgFEztS0jtxl8f97pkPhLFLbkyeF
+        0UXnW/7CpMDIKcIPMhQSzhe4UOUodjCWkQadAgC/QUzVBPbjKj2bMD6BPl6klLcn
+        q79zrizAmdgjyboSvaJUcIYyc6GYpUEl+WGiiGsCgYB5n0HZHoT6dsyaltMdcsuT
+        uhJbN8tAQeXW3oMY+IwboeXqmDS1Afh12y48QVuhCfkVMf1bbDrBHpOKHhoBcUhK
+        AnVu+375euaQFtez65aAr0jo0334h9/EMbdtmfKvwtBX/xOTp9yKinOtrb5vOL11
+        yNNodLwsaIQhSr6nV++hawKBgQCPFv5vpThSz+AF1fw1X1TvXyyQVdr2d8ngniqj
+        bWoRGrowcAXWqMUejt7mjPSflVLFcCRKqywq1BTc6Qc/QE6wHtOxwhaRL6zQ3JJt
+        tPHmfB92jPLZHl08Tfh63uXRlrkdsCW+9RZriA7VHM5cTrno2ScKHAy2ZH3c1+eS
+        nOmBvwKBgQDMhW6GAijaw219Ip1mQschsQZKw43UQXd9Pv1e/Py9BZYnOpD4FLel
+        WPOiDBuLmIO43l18tF8szKPICIXWc/Qz/l4JWunsk+oS2N1kITyiFKR0b7lwPCd6
+        QCMlRXXevzeb9CsxVnKqGyguNaNWeYcWLkUhaTI+7T56eBht3ZOSgQ==
+        -----END RSA PRIVATE KEY-----
+
+  .properties.vm_monitor:
+    selected_option: no_monitor
+    value: no_monitor
+  .properties.with_clair:
+    value: true
+  .properties.with_notary:
+    value: true
+network-properties:
+  network:
+    name: infrastructure
+  other_availability_zones:
+  - name: AZ1
+  singleton_availability_zone:
+    name: AZ1
+resource-config:
+  harbor-app:
+    instances: automatic
+    persistent_disk:
+      size_mb: automatic
+    instance_type:
+      id: automatic
+  smoke-testing:
+    instances: automatic
+    instance_type:
+      id: automatic
+errand-config:
+  smoke-testing:
+    post-deploy-state: when-changed
+  uaa-deregistration:
+    pre-delete-state: false
+
