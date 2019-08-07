@@ -1,5 +1,7 @@
 product-name: harbor-container-registry
 product-properties:
+  .harbor-app.static_ips:
+    value: 192.168.1.20
   .properties.admin_password:
     value:
       secret: ((properties_admin_password.secret))
@@ -14,6 +16,8 @@ product-properties:
   .properties.customize_container_network:
     selected_option: default
     value: default
+  .properties.hostname:
+    value: harbor.homelab.arg-pivotal.com
   .properties.no_proxy:
     value: 127.0.0.1,localhost,ui,registry
   .properties.registry_storage:
