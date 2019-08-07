@@ -1,9 +1,10 @@
 product-name: harbor-container-registry
 product-properties:
+  .harbor-app:
+    static_ips:
+      value: 192.168.1.20
   .properties.hostname:
     value: harbor.homelab.arg-pivotal.com
-  .properties.harbor-app.static_ips:
-    value: 192.168.1.20
   .properties.admin_password:
     value: 
       secret: ((harbor.properties.admin_password))
