@@ -8,7 +8,8 @@ product-properties:
     value: 
       secret: ((harbor.properties.admin_password))
   .properties.admin_password_for_smoketest:
-    value: admin00
+    value: 
+      secret: ((harbor.properties.admin_password))
   .properties.auth_mode:
     selected_option: db_auth
     value: db_auth
