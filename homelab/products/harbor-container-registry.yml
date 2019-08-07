@@ -5,7 +5,8 @@ product-properties:
   .properties.harbor-app.static_ips
     value: 192.168.1.20
   .properties.admin_password:
-    value: admin00
+    value: 
+      secret: ((harbor.properties.admin_password))
   .properties.admin_password_for_smoketest:
     value: admin00
   .properties.auth_mode:
