@@ -130,8 +130,6 @@ product-properties:
     value: disabled
   .properties.uaa:
     value: internal
-  .properties.uaa_oidc:
-    value: false
   .properties.uaa_pks_cli_access_token_lifetime:
     value: 600
   .properties.uaa_pks_cli_refresh_token_lifetime:
@@ -140,6 +138,13 @@ product-properties:
     value: disabled
   .properties.worker_max_in_flight:
     value: 1
+    
+# Changes for PKS 1.5 - Deletions will be moved from above into here and then commented out
+  .properties.telemetry_installation_purpose_selector:
+    value: demo_or_poc
+#  .properties.uaa_oidc:
+#    value: false
+
 network-properties:
   network:
     name: infrastructure
