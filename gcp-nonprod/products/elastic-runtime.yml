@@ -158,7 +158,11 @@ product-properties:
     - certificate:
         cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs.certificate))"
         private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs.private_key))"
-      name: SSL-Cert
+      name: SSL-Cert-Nov1-2019
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs.certificate2))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs.private_key2))"
+      name: SSL-Fid-Vanity-Nov1-2019
   .properties.networkpolicyserver_database_max_open_connections:
     value: 200
   .properties.networkpolicyserverinternal_database_max_open_connections:
