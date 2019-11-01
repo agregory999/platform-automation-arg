@@ -163,6 +163,50 @@ product-properties:
         cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs2.certificate))"
         private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs2.private_key))"
       name: SSL-Fid-Vanity-Nov1-2019
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned1
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned2
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned3
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned4
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned5
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned6
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned7
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned8
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned9
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned10
+    - certificate:
+        cert_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.certificate))"
+        private_key_pem: "((cf.product-properties.properties.networking_poe_ssl_certs_ss.private_key))"
+      name: SSL-SelfSigned11
   .properties.networkpolicyserver_database_max_open_connections:
     value: 200
   .properties.networkpolicyserverinternal_database_max_open_connections:
