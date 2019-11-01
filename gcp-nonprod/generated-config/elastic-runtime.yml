@@ -177,7 +177,7 @@ product-properties:
     - certificate:
         cert_pem: ((properties_networking_poe_ssl_certs_0_certificate.cert_pem))
         private_key_pem: ((properties_networking_poe_ssl_certs_0_certificate.private_key_pem))
-      name: SSL-Cert
+      name: SSL-Cert-Nov1-2019
   .properties.networkpolicyserver_database_max_open_connections:
     value: 200
   .properties.networkpolicyserverinternal_database_max_open_connections:
@@ -407,7 +407,7 @@ resource-config:
     - http:gcp-nonprod-httpslb
     - tcp:gcp-nonprod-cf-ws
   tcp_router:
-    instances: 1
+    instances: 0
     persistent_disk:
       size_mb: automatic
     instance_type:
