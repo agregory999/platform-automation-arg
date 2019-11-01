@@ -1,7 +1,7 @@
 product-name: harbor-container-registry
 product-properties:
   .harbor-app.static_ips:
-    value: 192.168.1.20
+    value: 192.168.1.33
   .properties.admin_password:
     value:
       secret: ((properties_admin_password.secret))
@@ -54,7 +54,7 @@ resource-config:
       id: automatic
 errand-config:
   smoke-testing:
-    post-deploy-state: when-changed
+    post-deploy-state: true
   uaa-deregistration:
     pre-delete-state: false
 
