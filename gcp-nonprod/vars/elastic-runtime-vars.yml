@@ -22,6 +22,14 @@ cf:
       gorouter_ssl_ciphers: ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384
       networking_poe_ssl_certs: ((cf/product-properties/networking_poe_ssl_certs))
       networking_poe_ssl_certs2: ((cf/product-properties/networking_poe_ssl_certs2))
+      networking_poe_ssl_certs3: ((cf/product-properties/networking_poe_ssl_certs3))
+      networking_poe_ssl_certs4: ((cf/product-properties/networking_poe_ssl_certs4))
+      networking_poe_ssl_certs5: ((cf/product-properties/networking_poe_ssl_certs5))
+      networking_poe_ssl_certs6: ((cf/product-properties/networking_poe_ssl_certs6))
+      networking_poe_ssl_certs7: ((cf/product-properties/networking_poe_ssl_certs7))
+      networking_poe_ssl_certs8: ((cf/product-properties/networking_poe_ssl_certs8))
+      networking_poe_ssl_certs9: ((cf/product-properties/networking_poe_ssl_certs9))
+      networking_poe_ssl_certs10: ((cf/product-properties/networking_poe_ssl_certs10))
       system_blobstore: internal
 #        type: external_gcs
 #        external_gcs:
