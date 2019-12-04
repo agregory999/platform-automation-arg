@@ -112,8 +112,211 @@ product-properties:
     value: ((pks.product-properties.worker_az_placement)) 
   .properties.plan5_selector.active.admission_plugins:
     value: ['pod_security_policy']
+
   .properties.plan6_selector:
-    value: Plan Inactive
+    selected_option: active
+    value: Plan Active
+  .properties.plan6_selector.active.addons_spec:
+    value: "apiVersion: v1\r\nkind: Namespace\r\nmetadata:\r\n  name: ingress-nginx\r\n
+      \ labels:\r\n    app.kubernetes.io/name: ingress-nginx\r\n    app.kubernetes.io/part-of:
+      ingress-nginx\r\n\r\n---\r\n\r\nkind: ConfigMap\r\napiVersion: v1\r\nmetadata:\r\n
+      \ name: nginx-configuration\r\n  namespace: ingress-nginx\r\n  labels:\r\n    app.kubernetes.io/name:
+      ingress-nginx\r\n    app.kubernetes.io/part-of: ingress-nginx\r\n\r\n---\r\nkind:
+      ConfigMap\r\napiVersion: v1\r\nmetadata:\r\n  name: tcp-services\r\n  namespace:
+      ingress-nginx\r\n  labels:\r\n    app.kubernetes.io/name: ingress-nginx\r\n
+      \   app.kubernetes.io/part-of: ingress-nginx\r\n\r\n---\r\nkind: ConfigMap\r\napiVersion:
+      v1\r\nmetadata:\r\n  name: udp-services\r\n  namespace: ingress-nginx\r\n  labels:\r\n
+      \   app.kubernetes.io/name: ingress-nginx\r\n    app.kubernetes.io/part-of:
+      ingress-nginx\r\n\r\n---\r\napiVersion: v1\r\nkind: ServiceAccount\r\nmetadata:\r\n
+      \ name: nginx-ingress-serviceaccount\r\n  namespace: ingress-nginx\r\n  labels:\r\n
+      \   app.kubernetes.io/name: ingress-nginx\r\n    app.kubernetes.io/part-of:
+      ingress-nginx\r\n\r\n---\r\napiVersion: rbac.authorization.k8s.io/v1beta1\r\nkind:
+      ClusterRole\r\nmetadata:\r\n  name: nginx-ingress-clusterrole\r\n  labels:\r\n
+      \   app.kubernetes.io/name: ingress-nginx\r\n    app.kubernetes.io/part-of:
+      ingress-nginx\r\nrules:\r\n  - apiGroups:\r\n      - \"\"\r\n    resources:\r\n
+      \     - configmaps\r\n      - endpoints\r\n      - nodes\r\n      - pods\r\n
+      \     - secrets\r\n    verbs:\r\n      - list\r\n      - watch\r\n  - apiGroups:\r\n
+      \     - \"\"\r\n    resources:\r\n      - nodes\r\n    verbs:\r\n      - get\r\n
+      \ - apiGroups:\r\n      - \"\"\r\n    resources:\r\n      - services\r\n    verbs:\r\n
+      \     - get\r\n      - list\r\n      - watch\r\n  - apiGroups:\r\n      - \"\"\r\n
+      \   resources:\r\n      - events\r\n    verbs:\r\n      - create\r\n      -
+      patch\r\n  - apiGroups:\r\n      - \"extensions\"\r\n      - \"networking.k8s.io\"\r\n
+      \   resources:\r\n      - ingresses\r\n    verbs:\r\n      - get\r\n      -
+      list\r\n      - watch\r\n  - apiGroups:\r\n      - \"extensions\"\r\n      -
+      \"networking.k8s.io\"\r\n    resources:\r\n      - ingresses/status\r\n    verbs:\r\n
+      \     - update\r\n\r\n---\r\napiVersion: rbac.authorization.k8s.io/v1beta1\r\nkind:
+      Role\r\nmetadata:\r\n  name: nginx-ingress-role\r\n  namespace: ingress-nginx\r\n
+      \ labels:\r\n    app.kubernetes.io/name: ingress-nginx\r\n    app.kubernetes.io/part-of:
+      ingress-nginx\r\nrules:\r\n  - apiGroups:\r\n      - \"\"\r\n    resources:\r\n
+      \     - configmaps\r\n      - pods\r\n      - secrets\r\n      - namespaces\r\n
+      \   verbs:\r\n      - get\r\n  - apiGroups:\r\n      - \"\"\r\n    resources:\r\n
+      \     - configmaps\r\n    resourceNames:\r\n      # Defaults to \"<election-id>-<ingress-class>\"\r\n
+      \     # Here: \"<ingress-controller-leader>-<nginx>\"\r\n      # This has to
+      be adapted if you change either parameter\r\n      # when launching the nginx-ingress-controller.\r\n
+      \     - \"ingress-controller-leader-nginx\"\r\n    verbs:\r\n      - get\r\n
+      \     - update\r\n  - apiGroups:\r\n      - \"\"\r\n    resources:\r\n      -
+      configmaps\r\n    verbs:\r\n      - create\r\n  - apiGroups:\r\n      - \"\"\r\n
+      \   resources:\r\n      - endpoints\r\n    verbs:\r\n      - get\r\n\r\n---\r\napiVersion:
+      rbac.authorization.k8s.io/v1beta1\r\nkind: RoleBinding\r\nmetadata:\r\n  name:
+      nginx-ingress-role-nisa-binding\r\n  namespace: ingress-nginx\r\n  labels:\r\n
+      \   app.kubernetes.io/name: ingress-nginx\r\n    app.kubernetes.io/part-of:
+      ingress-nginx\r\nroleRef:\r\n  apiGroup: rbac.authorization.k8s.io\r\n  kind:
+      Role\r\n  name: nginx-ingress-role\r\nsubjects:\r\n  - kind: ServiceAccount\r\n
+      \   name: nginx-ingress-serviceaccount\r\n    namespace: ingress-nginx\r\n\r\n---\r\napiVersion:
+      rbac.authorization.k8s.io/v1beta1\r\nkind: ClusterRoleBinding\r\nmetadata:\r\n
+      \ name: nginx-ingress-clusterrole-nisa-binding\r\n  labels:\r\n    app.kubernetes.io/name:
+      ingress-nginx\r\n    app.kubernetes.io/part-of: ingress-nginx\r\nroleRef:\r\n
+      \ apiGroup: rbac.authorization.k8s.io\r\n  kind: ClusterRole\r\n  name: nginx-ingress-clusterrole\r\nsubjects:\r\n
+      \ - kind: ServiceAccount\r\n    name: nginx-ingress-serviceaccount\r\n    namespace:
+      ingress-nginx\r\n\r\n---\r\n\r\napiVersion: apps/v1\r\nkind: Deployment\r\nmetadata:\r\n
+      \ name: nginx-ingress-controller\r\n  namespace: ingress-nginx\r\n  labels:\r\n
+      \   app.kubernetes.io/name: ingress-nginx\r\n    app.kubernetes.io/part-of:
+      ingress-nginx\r\nspec:\r\n  replicas: 1\r\n  selector:\r\n    matchLabels:\r\n
+      \     app.kubernetes.io/name: ingress-nginx\r\n      app.kubernetes.io/part-of:
+      ingress-nginx\r\n  template:\r\n    metadata:\r\n      labels:\r\n        app.kubernetes.io/name:
+      ingress-nginx\r\n        app.kubernetes.io/part-of: ingress-nginx\r\n      annotations:\r\n
+      \       prometheus.io/port: \"10254\"\r\n        prometheus.io/scrape: \"true\"\r\n
+      \   spec:\r\n      # wait up to five minutes for the drain of connections\r\n
+      \     terminationGracePeriodSeconds: 300\r\n      serviceAccountName: nginx-ingress-serviceaccount\r\n
+      \     nodeSelector:\r\n        kubernetes.io/os: linux\r\n      containers:\r\n
+      \       - name: nginx-ingress-controller\r\n          image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.26.1\r\n
+      \         args:\r\n            - /nginx-ingress-controller\r\n            -
+      --configmap=$(POD_NAMESPACE)/nginx-configuration\r\n            - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services\r\n
+      \           - --udp-services-configmap=$(POD_NAMESPACE)/udp-services\r\n            -
+      --publish-service=$(POD_NAMESPACE)/ingress-nginx\r\n            - --annotations-prefix=nginx.ingress.kubernetes.io\r\n
+      \         securityContext:\r\n            allowPrivilegeEscalation: true\r\n
+      \           capabilities:\r\n              drop:\r\n                - ALL\r\n
+      \             add:\r\n                - NET_BIND_SERVICE\r\n            # www-data
+      -> 33\r\n            runAsUser: 33\r\n          env:\r\n            - name:
+      POD_NAME\r\n              valueFrom:\r\n                fieldRef:\r\n                  fieldPath:
+      metadata.name\r\n            - name: POD_NAMESPACE\r\n              valueFrom:\r\n
+      \               fieldRef:\r\n                  fieldPath: metadata.namespace\r\n
+      \         ports:\r\n            - name: http\r\n              containerPort:
+      80\r\n            - name: https\r\n              containerPort: 443\r\n          livenessProbe:\r\n
+      \           failureThreshold: 3\r\n            httpGet:\r\n              path:
+      /healthz\r\n              port: 10254\r\n              scheme: HTTP\r\n            initialDelaySeconds:
+      10\r\n            periodSeconds: 10\r\n            successThreshold: 1\r\n            timeoutSeconds:
+      10\r\n          readinessProbe:\r\n            failureThreshold: 3\r\n            httpGet:\r\n
+      \             path: /healthz\r\n              port: 10254\r\n              scheme:
+      HTTP\r\n            periodSeconds: 10\r\n            successThreshold: 1\r\n
+      \           timeoutSeconds: 10\r\n          lifecycle:\r\n            preStop:\r\n
+      \             exec:\r\n                command:\r\n                  - /wait-shutdown\r\n\r\n---\r\nkind:
+      Service\r\napiVersion: v1\r\nmetadata:\r\n  name: ingress-nginx\r\n  namespace:
+      ingress-nginx\r\n  labels:\r\n    app.kubernetes.io/name: ingress-nginx\r\n
+      \   app.kubernetes.io/part-of: ingress-nginx\r\nspec:\r\n  externalTrafficPolicy:
+      Local\r\n  type: LoadBalancer\r\n  selector:\r\n    app.kubernetes.io/name:
+      ingress-nginx\r\n    app.kubernetes.io/part-of: ingress-nginx\r\n  ports:\r\n
+      \   - name: http\r\n      port: 80\r\n      targetPort: http\r\n    - name:
+      https\r\n      port: 443\r\n      targetPort: https\r\n\r\n---\r\n\r\napiVersion:
+      v1\r\nkind: Namespace\r\nmetadata:\r\n  labels:\r\n    app: metallb\r\n  name:
+      metallb-system\r\n---\r\napiVersion: policy/v1beta1\r\nkind: PodSecurityPolicy\r\nmetadata:\r\n
+      \ labels:\r\n    app: metallb\r\n  name: speaker\r\n  namespace: metallb-system\r\nspec:\r\n
+      \ allowPrivilegeEscalation: false\r\n  allowedCapabilities:\r\n  - NET_ADMIN\r\n
+      \ - NET_RAW\r\n  - SYS_ADMIN\r\n  fsGroup:\r\n    rule: RunAsAny\r\n  hostNetwork:
+      true\r\n  hostPorts:\r\n  - max: 7472\r\n    min: 7472\r\n  privileged: true\r\n
+      \ runAsUser:\r\n    rule: RunAsAny\r\n  seLinux:\r\n    rule: RunAsAny\r\n  supplementalGroups:\r\n
+      \   rule: RunAsAny\r\n  volumes:\r\n  - '*'\r\n---\r\napiVersion: v1\r\nkind:
+      ServiceAccount\r\nmetadata:\r\n  labels:\r\n    app: metallb\r\n  name: controller\r\n
+      \ namespace: metallb-system\r\n---\r\napiVersion: v1\r\nkind: ServiceAccount\r\nmetadata:\r\n
+      \ labels:\r\n    app: metallb\r\n  name: speaker\r\n  namespace: metallb-system\r\n---\r\napiVersion:
+      rbac.authorization.k8s.io/v1\r\nkind: ClusterRole\r\nmetadata:\r\n  labels:\r\n
+      \   app: metallb\r\n  name: metallb-system:controller\r\nrules:\r\n- apiGroups:\r\n
+      \ - ''\r\n  resources:\r\n  - services\r\n  verbs:\r\n  - get\r\n  - list\r\n
+      \ - watch\r\n  - update\r\n- apiGroups:\r\n  - ''\r\n  resources:\r\n  - services/status\r\n
+      \ verbs:\r\n  - update\r\n- apiGroups:\r\n  - ''\r\n  resources:\r\n  - events\r\n
+      \ verbs:\r\n  - create\r\n  - patch\r\n---\r\napiVersion: rbac.authorization.k8s.io/v1\r\nkind:
+      ClusterRole\r\nmetadata:\r\n  labels:\r\n    app: metallb\r\n  name: metallb-system:speaker\r\nrules:\r\n-
+      apiGroups:\r\n  - ''\r\n  resources:\r\n  - services\r\n  - endpoints\r\n  -
+      nodes\r\n  verbs:\r\n  - get\r\n  - list\r\n  - watch\r\n- apiGroups:\r\n  -
+      ''\r\n  resources:\r\n  - events\r\n  verbs:\r\n  - create\r\n  - patch\r\n-
+      apiGroups:\r\n  - extensions\r\n  resourceNames:\r\n  - speaker\r\n  resources:\r\n
+      \ - podsecuritypolicies\r\n  verbs:\r\n  - use\r\n---\r\napiVersion: rbac.authorization.k8s.io/v1\r\nkind:
+      Role\r\nmetadata:\r\n  labels:\r\n    app: metallb\r\n  name: config-watcher\r\n
+      \ namespace: metallb-system\r\nrules:\r\n- apiGroups:\r\n  - ''\r\n  resources:\r\n
+      \ - configmaps\r\n  verbs:\r\n  - get\r\n  - list\r\n  - watch\r\n---\r\napiVersion:
+      rbac.authorization.k8s.io/v1\r\nkind: ClusterRoleBinding\r\nmetadata:\r\n  labels:\r\n
+      \   app: metallb\r\n  name: metallb-system:controller\r\nroleRef:\r\n  apiGroup:
+      rbac.authorization.k8s.io\r\n  kind: ClusterRole\r\n  name: metallb-system:controller\r\nsubjects:\r\n-
+      kind: ServiceAccount\r\n  name: controller\r\n  namespace: metallb-system\r\n---\r\napiVersion:
+      rbac.authorization.k8s.io/v1\r\nkind: ClusterRoleBinding\r\nmetadata:\r\n  labels:\r\n
+      \   app: metallb\r\n  name: metallb-system:speaker\r\nroleRef:\r\n  apiGroup:
+      rbac.authorization.k8s.io\r\n  kind: ClusterRole\r\n  name: metallb-system:speaker\r\nsubjects:\r\n-
+      kind: ServiceAccount\r\n  name: speaker\r\n  namespace: metallb-system\r\n---\r\napiVersion:
+      rbac.authorization.k8s.io/v1\r\nkind: RoleBinding\r\nmetadata:\r\n  labels:\r\n
+      \   app: metallb\r\n  name: config-watcher\r\n  namespace: metallb-system\r\nroleRef:\r\n
+      \ apiGroup: rbac.authorization.k8s.io\r\n  kind: Role\r\n  name: config-watcher\r\nsubjects:\r\n-
+      kind: ServiceAccount\r\n  name: controller\r\n- kind: ServiceAccount\r\n  name:
+      speaker\r\n---\r\napiVersion: apps/v1\r\nkind: DaemonSet\r\nmetadata:\r\n  labels:\r\n
+      \   app: metallb\r\n    component: speaker\r\n  name: speaker\r\n  namespace:
+      metallb-system\r\nspec:\r\n  selector:\r\n    matchLabels:\r\n      app: metallb\r\n
+      \     component: speaker\r\n  template:\r\n    metadata:\r\n      annotations:\r\n
+      \       prometheus.io/port: '7472'\r\n        prometheus.io/scrape: 'true'\r\n
+      \     labels:\r\n        app: metallb\r\n        component: speaker\r\n    spec:\r\n
+      \     containers:\r\n      - args:\r\n        - --port=7472\r\n        - --config=config\r\n
+      \       env:\r\n        - name: METALLB_NODE_NAME\r\n          valueFrom:\r\n
+      \           fieldRef:\r\n              fieldPath: spec.nodeName\r\n        -
+      name: METALLB_HOST\r\n          valueFrom:\r\n            fieldRef:\r\n              fieldPath:
+      status.hostIP\r\n        image: metallb/speaker:v0.8.1\r\n        imagePullPolicy:
+      IfNotPresent\r\n        name: speaker\r\n        ports:\r\n        - containerPort:
+      7472\r\n          name: monitoring\r\n        resources:\r\n          limits:\r\n
+      \           cpu: 100m\r\n            memory: 100Mi\r\n        securityContext:\r\n
+      \         allowPrivilegeEscalation: false\r\n          capabilities:\r\n            add:\r\n
+      \           - NET_ADMIN\r\n            - NET_RAW\r\n            - SYS_ADMIN\r\n
+      \           drop:\r\n            - ALL\r\n          readOnlyRootFilesystem:
+      true\r\n      hostNetwork: true\r\n      nodeSelector:\r\n        beta.kubernetes.io/os:
+      linux\r\n      serviceAccountName: speaker\r\n      terminationGracePeriodSeconds:
+      0\r\n      tolerations:\r\n      - effect: NoSchedule\r\n        key: node-role.kubernetes.io/master\r\n---\r\napiVersion:
+      apps/v1\r\nkind: Deployment\r\nmetadata:\r\n  labels:\r\n    app: metallb\r\n
+      \   component: controller\r\n  name: controller\r\n  namespace: metallb-system\r\nspec:\r\n
+      \ revisionHistoryLimit: 3\r\n  selector:\r\n    matchLabels:\r\n      app: metallb\r\n
+      \     component: controller\r\n  template:\r\n    metadata:\r\n      annotations:\r\n
+      \       prometheus.io/port: '7472'\r\n        prometheus.io/scrape: 'true'\r\n
+      \     labels:\r\n        app: metallb\r\n        component: controller\r\n    spec:\r\n
+      \     containers:\r\n      - args:\r\n        - --port=7472\r\n        - --config=config\r\n
+      \       image: metallb/controller:v0.8.1\r\n        imagePullPolicy: IfNotPresent\r\n
+      \       name: controller\r\n        ports:\r\n        - containerPort: 7472\r\n
+      \         name: monitoring\r\n        resources:\r\n          limits:\r\n            cpu:
+      100m\r\n            memory: 100Mi\r\n        securityContext:\r\n          allowPrivilegeEscalation:
+      false\r\n          capabilities:\r\n            drop:\r\n            - all\r\n
+      \         readOnlyRootFilesystem: true\r\n      nodeSelector:\r\n        beta.kubernetes.io/os:
+      linux\r\n      securityContext:\r\n        runAsNonRoot: true\r\n        runAsUser:
+      65534\r\n      serviceAccountName: controller\r\n      terminationGracePeriodSeconds:
+      0\r\n\r\n---\r\napiVersion: v1\r\nkind: ConfigMap\r\nmetadata:\r\n  namespace:
+      metallb-system\r\n  name: config\r\ndata:\r\n  config: |\r\n    address-pools:\r\n
+      \   - name: default\r\n      protocol: layer2\r\n      addresses:\r\n      -
+      192.168.1.240-192.168.1.250\r\n"
+  .properties.plan6_selector.active.allow_privileged_containers:
+    value: true
+  .properties.plan6_selector.active.description:
+    value: 1 Master, 2 Worker, nginx-ingress-controller, metal-lb 192.168.1.240-250
+  .properties.plan6_selector.active.kubelet_drain_delete_local_data:
+    value: true
+  .properties.plan6_selector.active.kubelet_drain_force:
+    value: true
+  .properties.plan6_selector.active.kubelet_drain_force_node:
+    value: true
+  .properties.plan6_selector.active.kubelet_drain_grace_period:
+    value: 10
+  .properties.plan6_selector.active.kubelet_drain_ignore_daemonsets:
+    value: true
+  .properties.plan6_selector.active.kubelet_drain_timeout:
+    value: 10
+  .properties.plan6_selector.active.master_az_placement:
+    value:
+    - AZ1
+  .properties.plan6_selector.active.master_instances:
+    value: 1
+  .properties.plan6_selector.active.max_worker_instances:
+    value: 50
+  .properties.plan6_selector.active.name:
+    value: small-ingress-priv-metallb
+  .properties.plan6_selector.active.worker_az_placement:
+    value:
+    - AZ1
+  .properties.plan6_selector.active.worker_instances:
+    value: 2
+  .properties.plan6_selector.active.worker_persistent_disk_type:
+    value: "30720"
   .properties.plan7_selector:
     value: Plan Inactive
   .properties.plan8_selector:
