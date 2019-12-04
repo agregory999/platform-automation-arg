@@ -18,6 +18,11 @@ product-properties:
     value: default
   .properties.hostname:
     value: harbor.homelab.arg-pivotal.com
+  .properties.initial_delay_minutes:
+    value: 60
+  .properties.log_insight:
+    selected_option: disabled
+    value: disabled
   .properties.no_proxy:
     value: 127.0.0.1,localhost,ui,registry
   .properties.registry_storage:
