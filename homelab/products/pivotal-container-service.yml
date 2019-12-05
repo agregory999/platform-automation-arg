@@ -69,7 +69,7 @@ product-properties:
   .properties.plan3_selector:
     value: Plan Active
   .properties.plan3_selector.active.name:
-    value: ((pks.product-properties.plan2_name)) 
+    value: ((pks.product-properties.plan3_name)) 
   .properties.plan3_selector.active.description:
     value: ((pks.product-properties.plan3_description)) 
   .properties.plan3_selector.active.worker_instances:
