@@ -154,6 +154,9 @@ product-properties:
     value: 16384
   .properties.haproxy_ssl_ciphers:
     value: DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384
+  .properties.install_cflinuxfs2:
+    selected_option: skip
+    value: skip
   .properties.istio:
     selected_option: disable
     value: disable
@@ -177,211 +180,11 @@ product-properties:
     - certificate:
         cert_pem: ((properties_networking_poe_ssl_certs_0_certificate.cert_pem))
         private_key_pem: ((properties_networking_poe_ssl_certs_0_certificate.private_key_pem))
-      name: SSL-Cert-Nov1-2019
+      name: SSL-Fid-Vanity-Nov1-2019
     - certificate:
         cert_pem: ((properties_networking_poe_ssl_certs_1_certificate.cert_pem))
         private_key_pem: ((properties_networking_poe_ssl_certs_1_certificate.private_key_pem))
-      name: SSL-Fid-Vanity-Nov1-2019
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_2_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_2_certificate.private_key_pem))
-      name: SSL-SelfSigned1
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_3_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_3_certificate.private_key_pem))
-      name: SSL-SelfSigned2
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_4_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_4_certificate.private_key_pem))
-      name: SSL-SelfSigned3
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_5_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_5_certificate.private_key_pem))
-      name: SSL-SelfSigned4
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_6_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_6_certificate.private_key_pem))
-      name: SSL-SelfSigned5
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_7_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_7_certificate.private_key_pem))
-      name: SSL-SelfSigned6
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_8_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_8_certificate.private_key_pem))
-      name: SSL-SelfSigned7
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_9_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_9_certificate.private_key_pem))
-      name: SSL-SelfSigned8
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_10_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_10_certificate.private_key_pem))
-      name: SSL-SelfSigned9
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_11_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_11_certificate.private_key_pem))
-      name: SSL-SelfSigned10
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_12_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_12_certificate.private_key_pem))
-      name: SSL-SelfSigned11
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_13_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_13_certificate.private_key_pem))
-      name: SSL-SelfSigned12
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_14_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_14_certificate.private_key_pem))
-      name: SSL-SelfSigned13
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_15_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_15_certificate.private_key_pem))
-      name: SSL-SelfSigned14
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_16_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_16_certificate.private_key_pem))
-      name: SSL-SelfSigned15
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_17_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_17_certificate.private_key_pem))
-      name: SSL-SelfSigned16
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_18_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_18_certificate.private_key_pem))
-      name: SSL-SelfSigned17
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_19_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_19_certificate.private_key_pem))
-      name: SSL-SelfSigned18
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_20_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_20_certificate.private_key_pem))
-      name: SSL-SelfSigned19
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_21_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_21_certificate.private_key_pem))
-      name: SSL-SelfSigned20
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_22_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_22_certificate.private_key_pem))
-      name: SSL-SelfSigned21
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_23_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_23_certificate.private_key_pem))
-      name: SSL-SelfSigned22
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_24_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_24_certificate.private_key_pem))
-      name: SSL-SelfSigned23
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_25_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_25_certificate.private_key_pem))
-      name: SSL-SelfSigned24
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_26_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_26_certificate.private_key_pem))
-      name: SSL-SelfSigned25
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_27_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_27_certificate.private_key_pem))
-      name: SSL-SelfSigned26
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_28_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_28_certificate.private_key_pem))
-      name: SSL-SelfSigned27
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_29_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_29_certificate.private_key_pem))
-      name: SSL-SelfSigned28
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_30_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_30_certificate.private_key_pem))
-      name: SSL-SelfSigned29
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_31_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_31_certificate.private_key_pem))
-      name: SSL-SelfSigned30
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_32_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_32_certificate.private_key_pem))
-      name: SSL-SelfSigned31
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_33_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_33_certificate.private_key_pem))
-      name: SSL-SelfSigned32
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_34_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_34_certificate.private_key_pem))
-      name: SSL-SelfSigned33
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_35_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_35_certificate.private_key_pem))
-      name: SSL-SelfSigned34
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_36_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_36_certificate.private_key_pem))
-      name: SSL-SelfSigned35
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_37_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_37_certificate.private_key_pem))
-      name: SSL-SelfSigned36
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_38_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_38_certificate.private_key_pem))
-      name: SSL-SelfSigned37
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_39_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_39_certificate.private_key_pem))
-      name: SSL-SelfSigned38
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_40_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_40_certificate.private_key_pem))
-      name: SSL-SelfSigned39
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_41_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_41_certificate.private_key_pem))
-      name: SSL-SelfSigned40
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_42_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_42_certificate.private_key_pem))
-      name: SSL-SelfSigned41
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_43_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_43_certificate.private_key_pem))
-      name: SSL-SelfSigned42
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_44_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_44_certificate.private_key_pem))
-      name: SSL-SelfSigned43
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_45_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_45_certificate.private_key_pem))
-      name: SSL-SelfSigned44
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_46_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_46_certificate.private_key_pem))
-      name: SSL-SelfSigned45
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_47_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_47_certificate.private_key_pem))
-      name: SSL-SelfSigned46
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_48_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_48_certificate.private_key_pem))
-      name: SSL-SelfSigned47
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_49_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_49_certificate.private_key_pem))
-      name: SSL-SelfSigned48
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_50_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_50_certificate.private_key_pem))
-      name: SSL-SelfSigned49
-    - certificate:
-        cert_pem: ((properties_networking_poe_ssl_certs_51_certificate.cert_pem))
-        private_key_pem: ((properties_networking_poe_ssl_certs_51_certificate.private_key_pem))
-      name: SSL-SelfSigned50
+      name: SSL-Cert-EXP-Jan-20-2020
   .properties.networkpolicyserver_database_max_open_connections:
     value: 200
   .properties.networkpolicyserverinternal_database_max_open_connections:
@@ -411,6 +214,9 @@ product-properties:
     value: false
   .properties.router_backend_max_conn:
     value: 500
+  .properties.router_balancing_algorithm:
+    selected_option: round_robin
+    value: round-robin
   .properties.router_client_cert_validation:
     selected_option: request
     value: request
@@ -545,78 +351,136 @@ network-properties:
     name: us-east1-b
 resource-config:
   backup_restore:
-    instances: 1
-    persistent_disk:
-      size_mb: automatic
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
     instance_type:
       id: automatic
+    instances: 1
     internet_connected: true
+    persistent_disk:
+      size_mb: automatic
+    swap_as_percent_of_memory_size: automatic
   blobstore:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
+    instance_type:
+      id: automatic
     instances: 1
+    internet_connected: true
     persistent_disk:
       size_mb: automatic
-    instance_type:
-      id: automatic
-    internet_connected: true
+    swap_as_percent_of_memory_size: automatic
   compute:
+    max_in_flight: 4%
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
+    instance_type:
+      id: automatic
     instances: 2
-    instance_type:
-      id: automatic
     internet_connected: true
+    swap_as_percent_of_memory_size: automatic
   control:
-    instances: 1
-    instance_type:
-      id: automatic
-    internet_connected: true
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
     elb_names:
     - tcp:gcp-nonprod-cf-ssh
-  database:
+    instance_type:
+      id: automatic
     instances: 1
+    internet_connected: true
+    swap_as_percent_of_memory_size: automatic
+  database:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
+    instance_type:
+      id: automatic
+    instances: 1
+    internet_connected: true
     persistent_disk:
       size_mb: automatic
-    instance_type:
-      id: automatic
-    internet_connected: true
+    swap_as_percent_of_memory_size: automatic
   ha_proxy:
-    instances: automatic
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
     instance_type:
       id: automatic
+    instances: automatic
     internet_connected: true
+    swap_as_percent_of_memory_size: automatic
   istio_control:
-    instances: 0
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
     instance_type:
       id: automatic
+    instances: 0
     internet_connected: true
+    swap_as_percent_of_memory_size: automatic
   istio_router:
-    instances: 0
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
     instance_type:
       id: automatic
+    instances: 0
     internet_connected: true
+    swap_as_percent_of_memory_size: automatic
   mysql_monitor:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
+    instance_type:
+      id: automatic
     instances: automatic
-    instance_type:
-      id: automatic
     internet_connected: true
+    swap_as_percent_of_memory_size: automatic
   route_syncer:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
+    instance_type:
+      id: automatic
     instances: 0
-    instance_type:
-      id: automatic
     internet_connected: true
+    swap_as_percent_of_memory_size: automatic
   router:
-    instances: 1
-    instance_type:
-      id: automatic
-    internet_connected: true
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
     elb_names:
     - http:gcp-nonprod-httpslb
     - tcp:gcp-nonprod-cf-ws
-  tcp_router:
-    instances: 1
-    persistent_disk:
-      size_mb: automatic
     instance_type:
       id: automatic
+    instances: 1
     internet_connected: true
+    swap_as_percent_of_memory_size: automatic
+  tcp_router:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
+    instance_type:
+      id: automatic
+    instances: 1
+    internet_connected: true
+    persistent_disk:
+      size_mb: automatic
+    swap_as_percent_of_memory_size: automatic
 errand-config:
   deploy-autoscaler:
     post-deploy-state: true
