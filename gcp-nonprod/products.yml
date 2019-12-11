@@ -34,8 +34,8 @@ products:
     stemcell-iaas: google
 
   sso: 
-    product-version: "1.10.1"
-    pivnet-product-slug: Pivotal_Single_Sign-On_Service
+    product-version: "1.11.0-rc.64"
+    pivnet-product-slug: pivotal_single_sign-on_service
     pivnet-api-token: ((pivnet_token))
     pivnet-file-glob: "Pivotal_Single_Sign-On_Service*.pivotal"
     stemcell-iaas: google
