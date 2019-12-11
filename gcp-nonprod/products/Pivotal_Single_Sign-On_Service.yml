@@ -1,0 +1,37 @@
+product-name: Pivotal_Single_Sign-On_Service
+network-properties:
+  network:
+    name: gcp-nonprod-pas-subnet
+  other_availability_zones:
+  - name: us-east1-d
+  - name: us-east1-c
+  - name: us-east1-b
+  singleton_availability_zone:
+    name: us-east1-d
+resource-config:
+  deploy-service-broker:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    internet_connected: true
+    swap_as_percent_of_memory_size: automatic
+  destroy-broker:
+    max_in_flight: 1
+    additional_networks: []
+    additional_vm_extensions: []
+    elb_names: []
+    instance_type:
+      id: automatic
+    instances: automatic
+    internet_connected: true
+    swap_as_percent_of_memory_size: automatic
+errand-config:
+  deploy-service-broker:
+    post-deploy-state: true
+  destroy-broker:
+    pre-delete-state: true
+
